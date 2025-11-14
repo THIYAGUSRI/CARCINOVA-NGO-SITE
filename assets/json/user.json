@@ -1,0 +1,14 @@
+[
+    {
+        "name": "sivakumar",
+        "email": "sivakumar@gmail.com",
+        "bob": "21",
+        "blood-group": "o+ve",
+        "phone": "9876543210",
+        "gender": "male",
+        "qualification": "bsc",
+        "profession": "engineer",
+        "address": "chennai",
+        "country": "india"
+    }
+]
