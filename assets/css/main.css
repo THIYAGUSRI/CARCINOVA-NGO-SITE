@@ -970,9 +970,9 @@ section,
 .sticky-header {
   position: sticky;
   top: 0;
-  background: #343a40 !important;
+  background: var(--accent-color) !important;
   /* Dark header */
-  color: white;
+  color: black;
   z-index: 10;
 }
 
