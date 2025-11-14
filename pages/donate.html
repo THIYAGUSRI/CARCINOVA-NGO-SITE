@@ -45,60 +45,62 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex flex-column align-items-center position-relative">
+      <a href="../index.html" class="logo d-flex flex-column align-items-center position-relative">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/favicon.png" alt="" class="sitename" style="width: auto; height: 50px;">
-        <img src="assets/img/Logo-title.png" alt="" srcset="" class="sitename" style="width: auto; height: 35px;">
+        <img src="../assets/img/favicon.png" alt="" class="sitename" style="width: auto; height: 50px;">
+        <img src="../assets/img/Logo-title.png" alt="" srcset="" class="sitename" style="width: auto; height: 35px;">
         <!-- <h1 class="sitename">Estate<span>Agency</span></h1> -->
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="../index.html">Home</a></li>
-          <li class="dropdown"><span>About Us</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+          <li class="dropdown"><a href="#"><span>About Us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="who-we-are.html">Who We Are</a></li>
-              <li><a href="Our-Team-&-Collaborators.html">Team & Collaborators</a></li>
-              <li><a href="Our-Approach-&-Recognition.html">Approach & Recognition</a></li>
+              <li><a href="who-we-are.html" target="_blank">Who We Are</a></li>
+              <li><a href="Our-Team-&-Collaborators.html" target="_blank">Team & Collaborators</a></li>
+              <li><a href="Our-Approach-&-Recognition.html" target="_blank">Approach & Recognition</a>
+              </li>
             </ul>
           </li>
-          <li class="dropdown"><span>Programs & Impact </span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+          <li class="dropdown"><a href="#"><span>Programs & Impact </span>
+              <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="what-we-do.html">What We Do</a></li>
-              <li><a href="Mobile-Cancer-Units.html">Mobile Cancer Units</a></li>
-              <li><a href="Stories-of-Hope.html">Stories of Hope</a></li>
+              <li><a href="what-we-do.html" target="_blank">What We Do</a></li>
+              <li><a href="Mobile-Cancer-Units.html" target="_blank">Mobile Cancer Units</a></li>
+              <li><a href="Stories-of-Hope.html" target="_blank">Stories of Hope</a>
+              </li>
             </ul>
           </li>
-          <li class="dropdown"><span style="color: var(--accent-color);">Get Involve</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+          <li class="dropdown"><a href="#"><span style="color: var(--accent-color);">Get Involve</span> <i
+                class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="donate.html" style="color: var(--accent-color);">Donate</a></li>
-              <li><a href="Volunteer-or-Collaborate.html">Volunteer or Collaborate</a></li>
-              <li><a href="Careers-&-Internship.html">Careers & Internship</a></li>
+              <li><a href="donate.html" target="_blank" style="color: var(--accent-color);">Donate</a></li>
+              <li><a href="Volunteer-or-Collaborate.html" target="_blank">Volunteer or Collaborate</a>
+              </li>
+              <li><a href="Careers-&-Internship.html" target="_blank">Careers & Internship</a></li>
             </ul>
           </li>
-          <li class="dropdown"><span>Media & Transparency</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+          <li class="dropdown"><a href="#"><span>Media & Transparency</span> <i
+                class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="News-&-Events.html">News & Events</a></li>
-              <li><a href="Gallery-&-Videos.html">Gallery & Videos</a></li>
-              <li><a href="Reports-&-Documents.html">Reports & Documents</a></li>
+              <li><a href="News-&-Events.html" target="_blank">News & Events</a></li>
+              <li><a href="Gallery-&-Videos.html" target="_blank">Gallery & Videos</a></li>
+              <li><a href="Reports-&-Documents.html" target="_blank">Reports & Documents</a></li>
             </ul>
           </li>
-          <li><a href="contact.html">Reach Us</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <div class="navmenu">
-        <ul>
-          <li class="donation dropdown border border-2 rounded-pill p-3" style="cursor: pointer;"><span>Make a
-              Donation</span>
+          <li><a href="contact.html" target="_blank">Reach Us</a></li>
+          <li class="dropdown"
+            style="border: 1px solid var(--accent-color); border-radius:15px; color:white; padding-right:10px;">
+            <a href="#"><span>Make a Donation</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li style="cursor: pointer;"><a href="donate.html">Donation</a></li>
+              <li><a href="donate.html">Donation</a></li>
               <li><a href="#">Download Receipt</a></li>
             </ul>
           </li>
         </ul>
-      </div>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
     </div>
   </header>
 
@@ -131,9 +133,12 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6" data-aos="fade-right">
-            <h2 class="display-5 fw-bold mb-4" style="color: var(--accent-color);">Your Donation Can Light a Path of Hope</h2>
-            <p class="lead mb-4">At CarsiNova, every rupee you give transforms into education, awareness, and guidance for those who need it most.</p>
-            <p class="mb-4">We ensure every contribution directly reaches the cause, funding cancer awareness programs, teleconsultations, and our upcoming Mobile Cancer Units in rural Andhra Pradesh.</p>
+            <h2 class="display-5 fw-bold mb-4" style="color: var(--accent-color);">Your Donation Can Light a Path of
+              Hope</h2>
+            <p class="lead mb-4">At CarsiNova, every rupee you give transforms into education, awareness, and guidance
+              for those who need it most.</p>
+            <p class="mb-4">We ensure every contribution directly reaches the cause, funding cancer awareness programs,
+              teleconsultations, and our upcoming Mobile Cancer Units in rural Andhra Pradesh.</p>
             <div class="d-flex flex-wrap gap-3">
               <div class="impact-stat text-center p-3 rounded shadow-sm" style="background: white;">
                 <h4 class="fw-bold mb-1" style="color: var(--accent-color);">100%</h4>
@@ -151,8 +156,9 @@
           </div>
           <div class="col-lg-6" data-aos="fade-left">
             <div class="hero-image position-relative">
-              <img src="../assets/img/about-company-2.jpg" alt="Volunteer lighting a candle in a rural awareness session" 
-                   class="img-fluid rounded shadow-lg" style="height: 400px; width: 100%; object-fit: cover;">
+              <img src="../assets/img/about-company-2.jpg"
+                alt="Volunteer lighting a candle in a rural awareness session" class="img-fluid rounded shadow-lg"
+                style="height: 400px; width: 100%; object-fit: cover;">
               <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
                 <div class="text-center text-white p-4 rounded" style="background: rgba(0,0,0,0.6);">
                   <h3 class="mb-2">"Adopt a Village"</h3>
@@ -231,7 +237,7 @@
               <h2>Make Your Donation</h2>
               <p class="text-muted">Fill in your details to make a secure donation</p>
             </div>
-            
+
             <div class="card shadow border-0">
               <div class="card-body p-4">
                 <form action="#" method="post" class="php-email-form">
@@ -247,17 +253,20 @@
                         </div>
                         <div class="amount-option p-3 border rounded text-center flex-fill donation-amount-btn"
                           style="min-width: 100px; cursor: pointer;" onclick="selectAmount(this, '1000')">
-                          <input type="radio" name="amount" value="1000" id="amount1000" required style="display: none;">
+                          <input type="radio" name="amount" value="1000" id="amount1000" required
+                            style="display: none;">
                           <label class="d-block fw-bold">₹1000</label>
                         </div>
                         <div class="amount-option p-3 border rounded text-center flex-fill donation-amount-btn"
                           style="min-width: 100px; cursor: pointer;" onclick="selectAmount(this, '2000')">
-                          <input type="radio" name="amount" value="2000" id="amount2000" required style="display: none;">
+                          <input type="radio" name="amount" value="2000" id="amount2000" required
+                            style="display: none;">
                           <label class="d-block fw-bold">₹2000</label>
                         </div>
                         <div class="amount-option p-3 border rounded text-center flex-fill donation-amount-btn"
                           style="min-width: 100px; cursor: pointer;" onclick="selectOther(this)">
-                          <input type="radio" name="amount" value="other" id="amountOther" required style="display: none;">
+                          <input type="radio" name="amount" value="other" id="amountOther" required
+                            style="display: none;">
                           <span class="d-block fw-bold">Other</span>
                         </div>
                       </div>
@@ -283,15 +292,17 @@
                       <h6 for="email" class="form-label">Email Address<span class="text-danger">*</span></h6>
                       <div class="input-group">
                         <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="your@email.com" required>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="your@email.com"
+                          required>
                       </div>
                     </div>
                     <div class="col-md-6 mb-3">
                       <h6 for="phone" class="form-label">Phone Number<span class="text-danger">*</span></h6>
                       <div class="input-group">
                         <span class="input-group-text"><i class="bi bi-phone"></i></span>
-                        <input type="tel" class="form-control" name="phone" id="phone" placeholder="10-digit number" required pattern="[0-9]*"
-                          inputmode="numeric" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                        <input type="tel" class="form-control" name="phone" id="phone" placeholder="10-digit number"
+                          required pattern="[0-9]*" inputmode="numeric"
+                          onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                       </div>
                     </div>
                     <div class="col-md-6 mb-3">
@@ -361,8 +372,9 @@
         <div class="row">
           <div class="col-lg-10 mx-auto text-center" data-aos="fade-up">
             <h2 class="mb-4">📄 Transparency Promise</h2>
-            <p class="lead mb-5">Every donor receives an official e-receipt within 24 hours and tax exemption certificate (80G once approved).</p>
-            
+            <p class="lead mb-5">Every donor receives an official e-receipt within 24 hours and tax exemption
+              certificate (80G once approved).</p>
+
             <div class="row g-4">
               <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="transparency-card p-4 rounded shadow-sm h-100 bg-white">
@@ -386,10 +398,11 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="mt-5 p-4 rounded" style="background: var(--accent-color); color: white;">
               <h4 class="mb-3">Transparency is our foundation. Hope is our reward.</h4>
-              <p class="mb-0">Your trust is our most valuable asset. We are committed to complete transparency in all our operations.</p>
+              <p class="mb-0">Your trust is our most valuable asset. We are committed to complete transparency in all
+                our operations.</p>
             </div>
           </div>
         </div>
@@ -573,12 +586,12 @@
 
     // Add hover effects to donation amount buttons
     document.querySelectorAll('.donation-amount-btn').forEach(btn => {
-      btn.addEventListener('mouseenter', function() {
+      btn.addEventListener('mouseenter', function () {
         if (!this.classList.contains('bg-primary')) {
           this.style.backgroundColor = '#e9ecef';
         }
       });
-      btn.addEventListener('mouseleave', function() {
+      btn.addEventListener('mouseleave', function () {
         if (!this.classList.contains('bg-primary')) {
           this.style.backgroundColor = '';
         }
@@ -587,22 +600,22 @@
 
     // Add hover effects to donation method cards
     document.querySelectorAll('.donation-method-card').forEach(card => {
-      card.addEventListener('mouseenter', function() {
+      card.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-5px)';
         this.style.transition = 'transform 0.3s ease';
       });
-      card.addEventListener('mouseleave', function() {
+      card.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0)';
       });
     });
 
     // Add hover effects to transparency cards
     document.querySelectorAll('.transparency-card').forEach(card => {
-      card.addEventListener('mouseenter', function() {
+      card.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-3px)';
         this.style.transition = 'transform 0.3s ease';
       });
-      card.addEventListener('mouseleave', function() {
+      card.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0)';
       });
     });
@@ -617,7 +630,7 @@
     };
   </script>
 
-  
+
 </body>
 
 </html>
