@@ -54,44 +54,44 @@
           <li><a href="../index.html">Home</a></li>
           <li class="dropdown"><a href="#"><span>About Us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="who-we-are.html" >Who We Are</a></li>
-              <li><a href="Our-Team-&-Collaborators.html" >Team & Collaborators</a></li>
-              <li><a href="Our-Approach-&-Recognition.html" >Approach & Recognition</a>
+              <li><a href="who-we-are.html">Who We Are</a></li>
+              <li><a href="Our-Team-&-Collaborators.html">Team & Collaborators</a></li>
+              <li><a href="Our-Approach-&-Recognition.html">Approach & Recognition</a>
               </li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>Programs & Impact </span>
               <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="what-we-do.html" >What We Do</a></li>
-              <li><a href="Mobile-Cancer-Units.html" >Mobile Cancer Units</a></li>
-              <li><a href="Stories-of-Hope.html" >Stories of Hope</a>
+              <li><a href="what-we-do.html">What We Do</a></li>
+              <li><a href="Mobile-Cancer-Units.html">Mobile Cancer Units</a></li>
+              <li><a href="Stories-of-Hope.html">Stories of Hope</a>
               </li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>Get Involve</span> <i
                 class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="donate.html" >Donate</a></li>
-              <li><a href="Volunteer-or-Collaborate.html" >Volunteer
+              <li><a href="donate.html">Donate</a></li>
+              <li><a href="Volunteer-or-Collaborate.html">Volunteer
                   or Collaborate</a>
               </li>
-              <li><a href="Careers-&-Internship.html" >Careers &
+              <li><a href="Careers-&-Internship.html">Careers &
                   Internship</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>Media & Transparency</span> <i
                 class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="News-&-Events.html" >News & Events</a>
+              <li><a href="News-&-Events.html">News & Events</a>
               </li>
-              <li><a href="Gallery-&-Videos.html" >Gallery &
+              <li><a href="Gallery-&-Videos.html">Gallery &
                   Videos</a></li>
-              <li><a href="Reports-&-Documents.html" >Reports &
+              <li><a href="Reports-&-Documents.html">Reports &
                   Documents</a></li>
             </ul>
           </li>
-          <li><a href="contact.html"  style="color: var(--accent-color);">Reach Us</a></li>
+          <li><a href="contact.html" style="color: var(--accent-color);">Reach Us</a></li>
           <li class="dropdown"
             style="border: 1px solid var(--accent-color); border-radius:15px; color:white; padding-right:10px;">
             <a href="#"><span>Make a Donation</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -115,7 +115,7 @@
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
               <h1>Contact</h1>
-              <p class="mb-0">At CarsiNova, every message matters — whether it’s a request for help, a partnership idea,
+              <p class="mb-0">At CarsiNova, every message matters — whether it's a request for help, a partnership idea,
                 or simply a word of encouragement.
                 You can reach us easily through the following channels. Our team ensures every query is responded to
                 with empathy and care.
@@ -123,7 +123,7 @@
             </div>
           </div>
         </div>
-      </div>  
+      </div>
     </div><!-- End Page Title -->
 
     <!-- Contact Section -->
@@ -133,8 +133,8 @@
 
         <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
           <iframe style="border:0; width: 100%; height: 270px;"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1805.9598849120996!2d83.2469238504913!3d17.747583299999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3967ba4d5fd79d%3A0x6863b332a59bd76!2sVisakhapatnam%20Andhra%20Pradesh!5e1!3m2!1sen!2sin!4v1763040448321!5m2!1sen!2sin"
-            frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1805.9598849120996!2d83.2469237504913!3d17.747583299999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3967ba4d5fd79d%3A0x6863b332a59bd76!2sVisakhapatnam%20Andhra%20Pradesh!5e1!3m2!1sen!2sin!4v1763040448321!5m2!1sen!2sin"
+            frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div><!-- End Google Maps -->
 
         <div class="row gy-4">
@@ -167,24 +167,27 @@
           </div>
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
-              data-aos-delay="200">
+            <form id="contactForm" class="php-email-form" data-aos="fade-up" data-aos-delay="200"
+              action="javascript:void(0);">
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                  <input type="text" id="contactName" name="name" class="form-control" placeholder="Your Name" required>
                 </div>
 
                 <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  <input type="email" id="contactEmail" class="form-control" name="email" placeholder="Your Email"
+                    required>
                 </div>
 
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                  <input type="text" id="contactSubject" class="form-control" name="subject" placeholder="Subject"
+                    required>
                 </div>
 
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                  <textarea class="form-control" id="contactMessage" name="message" rows="6" placeholder="Message"
+                    required></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
@@ -216,8 +219,8 @@
           <i class="bi bi-geo-alt icon"></i>
           <div class="address d-flex align-items-center justify-content-center pt-2">
             <div class="d-flex flex-column align-items-center">
-              <p>A108 Adam Street</p>
-              <p>New York, NY 535022</p>
+              <p>CarsiNova Cancer Awareness & Care Foundation,</p>
+              <p>Visakhapatnam, Andhra Pradesh, India</p>
             </div>
           </div>
 
@@ -263,13 +266,99 @@
 
   <!-- Vendor JS Files -->
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/php-email-form/validate.js"></script>
   <script src="../assets/vendor/aos/aos.js"></script>
   <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
 
   <!-- Main JS File -->
   <script src="../assets/js/main.js"></script>
+
+  <!-- EmailJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS
+    emailjs.init("wpMMFMt2-qdqloNuG");
+
+    // Form submission handler
+    document.addEventListener('DOMContentLoaded', function () {
+      const contactForm = document.getElementById('contactForm');
+
+      if (contactForm) {
+        // Remove the action attribute to prevent the validate.js error
+        contactForm.removeAttribute('action');
+        contactForm.removeAttribute('method');
+
+        contactForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          e.stopPropagation(); // Prevent validate.js from handling the form
+
+          // Hide any existing messages
+          const loadingDiv = contactForm.querySelector('.loading');
+          const errorDiv = contactForm.querySelector('.error-message');
+          const successDiv = contactForm.querySelector('.sent-message');
+
+          loadingDiv.style.display = 'none';
+          errorDiv.style.display = 'none';
+          successDiv.style.display = 'none';
+
+          sendContactForm();
+        });
+      }
+    });
+
+    function sendContactForm() {
+      const contactForm = document.getElementById('contactForm');
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      const loadingDiv = contactForm.querySelector('.loading');
+      const errorDiv = contactForm.querySelector('.error-message');
+      const successDiv = contactForm.querySelector('.sent-message');
+
+      // Replace these with your actual EmailJS IDs
+      const SERVICE_ID = "service_92nvb8t"; // Replace with your EmailJS Service ID
+      const TEMPLATE_ID = "template_b0w6qi6"; // Replace with your EmailJS Template ID
+
+      // Show loading state
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      loadingDiv.style.display = 'block';
+      errorDiv.style.display = 'none';
+      successDiv.style.display = 'none';
+
+      const templateParams = {
+        name: document.getElementById("contactName").value,
+        email: document.getElementById("contactEmail").value,
+        subject: document.getElementById("contactSubject").value,
+        message: document.getElementById("contactMessage").value,
+      };
+
+      emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+        .then((response) => {
+          console.log('SUCCESS!', response.status, response.text);
+
+          // Show success message
+          successDiv.style.display = 'block';
+          loadingDiv.style.display = 'none';
+          errorDiv.style.display = 'none';
+
+          // Reset form
+          contactForm.reset();
+        })
+        .catch((error) => {
+          console.error('FAILED...', error);
+
+          // Show error message
+          errorDiv.textContent = 'Sorry, there was an error sending your message. Please try again.';
+          errorDiv.style.display = 'block';
+          loadingDiv.style.display = 'none';
+          successDiv.style.display = 'none';
+        })
+        .finally(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        });
+    }
+  </script>
 
 </body>
 

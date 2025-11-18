@@ -53,39 +53,39 @@
           <li><a href="../index.html">Home</a></li>
           <li class="dropdown"><a href="#"><span>About Us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="who-we-are.html" >Who We Are</a></li>
-              <li><a href="Our-Team-&-Collaborators.html" >Team & Collaborators</a></li>
-              <li><a href="Our-Approach-&-Recognition.html" >Approach & Recognition</a>
+              <li><a href="who-we-are.html">Who We Are</a></li>
+              <li><a href="Our-Team-&-Collaborators.html">Team & Collaborators</a></li>
+              <li><a href="Our-Approach-&-Recognition.html">Approach & Recognition</a>
               </li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span style="color: var(--accent-color);">Programs & Impact </span>
               <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="what-we-do.html" >What We Do</a></li>
-              <li><a href="Mobile-Cancer-Units.html" >Mobile Cancer Units</a></li>
-              <li><a href="Stories-of-Hope.html"  style="color: var(--accent-color);">Stories of Hope</a>
+              <li><a href="what-we-do.html">What We Do</a></li>
+              <li><a href="Mobile-Cancer-Units.html">Mobile Cancer Units</a></li>
+              <li><a href="Stories-of-Hope.html" style="color: var(--accent-color);">Stories of Hope</a>
               </li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>Get Involve</span> <i
                 class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="donate.html" >Donate</a></li>
-              <li><a href="Volunteer-or-Collaborate.html" >Volunteer or Collaborate</a>
+              <li><a href="donate.html">Donate</a></li>
+              <li><a href="Volunteer-or-Collaborate.html">Volunteer or Collaborate</a>
               </li>
-              <li><a href="Careers-&-Internship.html" >Careers & Internship</a></li>
+              <li><a href="Careers-&-Internship.html">Careers & Internship</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>Media & Transparency</span> <i
                 class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="News-&-Events.html" >News & Events</a></li>
-              <li><a href="Gallery-&-Videos.html" >Gallery & Videos</a></li>
-              <li><a href="Reports-&-Documents.html" >Reports & Documents</a></li>
+              <li><a href="News-&-Events.html">News & Events</a></li>
+              <li><a href="Gallery-&-Videos.html">Gallery & Videos</a></li>
+              <li><a href="Reports-&-Documents.html">Reports & Documents</a></li>
             </ul>
           </li>
-          <li><a href="contact.html" >Reach Us</a></li>
+          <li><a href="contact.html">Reach Us</a></li>
           <li class="dropdown"
             style="border: 1px solid var(--accent-color); border-radius:15px; color:white; padding-right:10px;">
             <a href="#"><span>Make a Donation</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -267,21 +267,25 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form action="https://formspree.io/f/your-form-id" method="POST">
+            <form>
               <div class="mb-3">
-                <label for="storyName" class="form-label">Your Name</label>
-                <input type="text" class="form-control" id="storyName" name="name" required>
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
               </div>
               <div class="mb-3">
-                <label for="storyEmail" class="form-label">Your Email</label>
-                <input type="email" class="form-control" id="storyEmail" name="_replyto" required>
+                <label for="email" class="form-label">Your Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
               </div>
               <div class="mb-3">
-                <label for="storyMessage" class="form-label">Your Story</label>
-                <textarea class="form-control" id="storyMessage" rows="6" name="story" required></textarea>
+                <label for="subject" class="form-label">Your Subject</label>
+                <input type="text" class="form-control" id="subject" name="subject" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Your Story</label>
+                <textarea class="form-control" id="message" rows="6" name="message" required></textarea>
               </div>
               <div class="d-grid">
-                <button type="submit" class="btn btn-success">Send My Story</button>
+                <button class="btn btn-success" onclick="sendMail()">Send My Story</button>
               </div>
             </form>
           </div>
@@ -355,8 +359,55 @@
   <!-- Main JS File -->
   <script src="../assets/js/main.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS
+    emailjs.init("wpMMFMt2-qdqloNuG");
 
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelector('#shareStoryModal form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        sendMail();
+      });
+    });
 
+    function sendMail() {
+      const submitBtn = document.querySelector('#shareStoryModal .btn-success');
+      const originalText = submitBtn.textContent;
+
+      // UPDATE THESE WITH YOUR ACTUAL IDs
+      const SERVICE_ID = "service_92nvb8t"; // Replace with your actual Service ID
+      const TEMPLATE_ID = "template_b0w6qi6"; // Replace with your actual Template ID
+
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      var templateParams = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value,
+      };
+
+      emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+        .then((response) => {
+          alert("✓ Your story has been sent successfully! Thank you for sharing.");
+
+          // Close modal and reset form
+          const modal = bootstrap.Modal.getInstance(document.getElementById('shareStoryModal'));
+          modal.hide();
+          document.querySelector('#shareStoryModal form').reset();
+        })
+        .catch((error) => {
+          alert("✗ Failed to send: " + error.text + ". Please contact us directly.");
+          console.error('EmailJS Error:', error);
+        })
+        .finally(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        });
+    }
+  </script>
 </body>
 
 </html>

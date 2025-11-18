@@ -53,40 +53,40 @@
           <li><a href="../index.html">Home</a></li>
           <li class="dropdown"><a href="#"><span>About Us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="who-we-are.html" >Who We Are</a></li>
-              <li><a href="Our-Team-&-Collaborators.html" >Team & Collaborators</a></li>
-              <li><a href="Our-Approach-&-Recognition.html" >Approach & Recognition</a>
+              <li><a href="who-we-are.html">Who We Are</a></li>
+              <li><a href="Our-Team-&-Collaborators.html">Team & Collaborators</a></li>
+              <li><a href="Our-Approach-&-Recognition.html">Approach & Recognition</a>
               </li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>Programs & Impact </span>
               <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="what-we-do.html" >What We Do</a></li>
-              <li><a href="Mobile-Cancer-Units.html" >Mobile Cancer Units</a></li>
-              <li><a href="Stories-of-Hope.html" >Stories of Hope</a>
+              <li><a href="what-we-do.html">What We Do</a></li>
+              <li><a href="Mobile-Cancer-Units.html">Mobile Cancer Units</a></li>
+              <li><a href="Stories-of-Hope.html">Stories of Hope</a>
               </li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span style="color: var(--accent-color);">Get Involve</span> <i
                 class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="donate.html" >Donate</a></li>
-              <li><a href="Volunteer-or-Collaborate.html"  style="color: var(--accent-color);">Volunteer
+              <li><a href="donate.html">Donate</a></li>
+              <li><a href="Volunteer-or-Collaborate.html" style="color: var(--accent-color);">Volunteer
                   or Collaborate</a>
               </li>
-              <li><a href="Careers-&-Internship.html" >Careers & Internship</a></li>
+              <li><a href="Careers-&-Internship.html">Careers & Internship</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>Media & Transparency</span> <i
                 class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="News-&-Events.html" >News & Events</a></li>
-              <li><a href="Gallery-&-Videos.html" >Gallery & Videos</a></li>
-              <li><a href="Reports-&-Documents.html" >Reports & Documents</a></li>
+              <li><a href="News-&-Events.html">News & Events</a></li>
+              <li><a href="Gallery-&-Videos.html">Gallery & Videos</a></li>
+              <li><a href="Reports-&-Documents.html">Reports & Documents</a></li>
             </ul>
           </li>
-          <li><a href="contact.html" >Reach Us</a></li>
+          <li><a href="contact.html">Reach Us</a></li>
           <li class="dropdown"
             style="border: 1px solid var(--accent-color); border-radius:15px; color:white; padding-right:10px;">
             <a href="#"><span>Make a Donation</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -233,8 +233,8 @@
         <div class="row justify-content-around gy-4" style="padding-top: 75px;">
           <div class="col-lg-8 mx-auto" data-aos="fade-up" data-aos-delay="100">
             <div class="volunteer-form-container p-4 shadow rounded">
-              <h3 class="text-center mb-4">🪶 Volunteer Signup Form</h3>
-              <form action="https://formspree.io/f/your-form-id" method="POST">
+              <h3 class="text-center mb-4">🪶 Volunteer Request Form</h3>
+              <form id="volunteerForm">
                 <div class="row gy-3">
                   <div class="col-md-6">
                     <div class="form-group">
@@ -285,7 +285,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </section><!-- /Volunteer Section -->
 
@@ -359,6 +358,72 @@
 
   <!-- Main JS File -->
   <script src="../assets/js/main.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS
+    emailjs.init("wpMMFMt2-qdqloNuG");
+
+    // Form submission handler
+    document.addEventListener('DOMContentLoaded', function () {
+      const volunteerForm = document.getElementById('volunteerForm');
+
+      if (volunteerForm) {
+        volunteerForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          sendVolunteerForm();
+        });
+      }
+    });
+
+    function sendVolunteerForm() {
+      const submitBtn = document.querySelector('#volunteerForm .btn-success');
+      const originalText = submitBtn.textContent;
+
+      // Replace these with your actual EmailJS IDs
+      const SERVICE_ID = "service_92nvb8t"; // Replace with your EmailJS Service ID
+      const TEMPLATE_ID = "template_b0w6qi6"; // Replace with your EmailJS Template ID
+
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      // Combine all fields into one message
+      const fullMessage = `
+Name: ${document.getElementById("name").value}
+Email: ${document.getElementById("email").value}
+Mobile: ${document.getElementById("mobile").value}
+City: ${document.getElementById("city").value}
+Role: ${document.getElementById("role").value}
+Message: ${document.getElementById("message").value}
+    `.trim();
+
+      const templateParams = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: fullMessage,
+        subject: "Volunteer Request Message" // Default subject
+      };
+
+      emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+        .then((response) => {
+          alert("✓ Thank you for your interest! We've received your volunteer application and will contact you soon.");
+          console.log('SUCCESS!', response.status, response.text);
+
+          // Reset form
+          document.getElementById('volunteerForm').reset();
+        })
+        .catch((error) => {
+          console.error('FAILED...', error);
+          alert("✗ Sorry, there was an error submitting your application. Please try again or contact us directly.");
+        })
+        .finally(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        });
+    }
+  </script>
+
 </body>
 
 </html>
