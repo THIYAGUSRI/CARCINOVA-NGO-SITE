@@ -31,6 +31,10 @@
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+  <!-- jsPDF for PDF generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
   <!-- =======================================================
   * Template Name: EstateAgency
   * Template URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
@@ -46,10 +50,9 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="../index.html" class="logo d-flex flex-column align-items-center position-relative">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="../assets/img/favicon.png" alt="" class="sitename" style="width: auto; height: 50px;">
+        <img src="https://ik.imagekit.io/y1q1jlceh/CARCINOVA_LOGO.jpg" alt="" class="sitename"
+          style="width: auto; height: 50px;">
         <img src="../assets/img/Logo-title.png" alt="" srcset="" class="sitename" style="width: auto; height: 35px;">
-        <!-- <h1 class="sitename">Estate<span>Agency</span></h1> -->
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -57,39 +60,36 @@
           <li><a href="../index.html">Home</a></li>
           <li class="dropdown"><a href="#"><span>About Us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="who-we-are.html" >Who We Are</a></li>
-              <li><a href="Our-Team-&-Collaborators.html" >Team & Collaborators</a></li>
-              <li><a href="Our-Approach-&-Recognition.html" >Approach & Recognition</a>
-              </li>
+              <li><a href="who-we-are.html">Who We Are</a></li>
+              <li><a href="Our-Team-&-Collaborators.html">Team & Collaborators</a></li>
+              <li><a href="Our-Approach-&-Recognition.html">Approach & Recognition</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>Programs & Impact </span>
               <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="what-we-do.html" >What We Do</a></li>
-              <li><a href="Mobile-Cancer-Units.html" >Mobile Cancer Units</a></li>
-              <li><a href="Stories-of-Hope.html" >Stories of Hope</a>
-              </li>
+              <li><a href="what-we-do.html">What We Do</a></li>
+              <li><a href="Mobile-Cancer-Units.html">Mobile Cancer Units</a></li>
+              <li><a href="Stories-of-Hope.html">Stories of Hope</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span style="color: var(--accent-color);">Get Involve</span> <i
                 class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="donate.html"  style="color: var(--accent-color);">Donate</a></li>
-              <li><a href="Volunteer-or-Collaborate.html" >Volunteer or Collaborate</a>
-              </li>
-              <li><a href="Careers-&-Internship.html" >Careers & Internship</a></li>
+              <li><a href="donate.html" style="color: var(--accent-color);">Donate</a></li>
+              <li><a href="Volunteer-or-Collaborate.html">Volunteer or Collaborate</a></li>
+              <li><a href="Careers-&-Internship.html">Careers & Internship</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>Media & Transparency</span> <i
                 class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="News-&-Events.html" >News & Events</a></li>
-              <li><a href="Gallery-&-Videos.html" >Gallery & Videos</a></li>
-              <li><a href="Reports-&-Documents.html" >Reports & Documents</a></li>
+              <li><a href="News-&-Events.html">News & Events</a></li>
+              <li><a href="Gallery-&-Videos.html">Gallery & Videos</a></li>
+              <li><a href="Reports-&-Documents.html">Reports & Documents</a></li>
             </ul>
           </li>
-          <li><a href="contact.html" >Reach Us</a></li>
+          <li><a href="contact.html">Reach Us</a></li>
           <li class="dropdown"
             style="border: 1px solid var(--accent-color); border-radius:15px; color:white; padding-right:10px;">
             <a href="#"><span>Make a Donation</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -240,7 +240,7 @@
 
             <div class="card shadow border-0">
               <div class="card-body p-4">
-                <form action="#" method="post" class="php-email-form">
+                <form id="donationForm" action="#" method="post" class="donation-form">
                   <div class="row gy-4">
                     <!-- Donation Amount - HORIZONTAL BUTTONS -->
                     <div class="mb-4">
@@ -280,6 +280,55 @@
                       </div>
                     </div>
 
+                    <!-- AMOUNT IN WORDS -->
+                    <div class="col-12 mb-3">
+                      <h6 for="amount-in-words" class="form-label">Amount in Words<span class="text-danger">*</span>
+                      </h6>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-pen"></i></span>
+                        <input type="text" class="form-control" name="amount-in-words" id="amount-in-words"
+                          placeholder="Amount in words" readonly>
+                      </div>
+                    </div>
+
+                    <!-- MODE OF PAYMENT -->
+                    <div class="col-12 mb-3">
+                      <h6 for="payment-mode" class="form-label">Mode of Payment<span class="text-danger">*</span></h6>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-credit-card"></i></span>
+                        <select class="form-select" name="payment-mode" id="payment-mode" required>
+                          <option value="" disabled selected>Select payment method</option>
+                          <option value="UPI">UPI</option>
+                          <option value="Credit Card">Credit Card</option>
+                          <option value="Debit Card">Debit Card</option>
+                          <option value="Net Banking">Net Banking</option>
+                          <option value="Cheque">Cheque</option>
+                          <option value="Demand Draft">Demand Draft</option>
+                          <option value="Cash">Cash</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- DATE -->
+                    <div class="col-md-6 mb-3">
+                      <h6 for="date" class="form-label">Date<span class="text-danger">*</span></h6>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+                        <input type="date" class="form-control" name="date" id="date" required>
+                      </div>
+                    </div>
+
+                    <!-- RECEIPT NO -->
+                    <div class="col-md-6 mb-3">
+                      <h6 for="receipt-no" class="form-label">Receipt No<span class="text-danger">*</span></h6>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-receipt"></i></span>
+                        <input type="text" class="form-control" name="receipt-no" id="receipt-no"
+                          placeholder="Receipt number" readonly>
+                      </div>
+                    </div>
+
+                    <!-- NAME -->
                     <div class="col-md-6 mb-3">
                       <h6 for="name" class="form-label">Full Name<span class="text-danger">*</span></h6>
                       <div class="input-group">
@@ -288,6 +337,8 @@
                           required>
                       </div>
                     </div>
+
+                    <!-- EMAIL -->
                     <div class="col-md-6 mb-3">
                       <h6 for="email" class="form-label">Email Address<span class="text-danger">*</span></h6>
                       <div class="input-group">
@@ -296,6 +347,8 @@
                           required>
                       </div>
                     </div>
+
+                    <!-- PHONE NO -->
                     <div class="col-md-6 mb-3">
                       <h6 for="phone" class="form-label">Phone Number<span class="text-danger">*</span></h6>
                       <div class="input-group">
@@ -305,6 +358,18 @@
                           onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                       </div>
                     </div>
+
+                    <!-- ADDRESS -->
+                    <div class="col-12 mb-3">
+                      <h6 for="address" class="form-label">Address<span class="text-danger">*</span></h6>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-house"></i></span>
+                        <textarea class="form-control" name="address" id="address" rows="3"
+                          placeholder="Complete address" required></textarea>
+                      </div>
+                    </div>
+
+                    <!-- STATE -->
                     <div class="col-md-6 mb-3">
                       <h6 for="state" class="form-label">State<span class="text-danger">*</span></h6>
                       <div class="input-group">
@@ -320,6 +385,8 @@
                         </select>
                       </div>
                     </div>
+
+                    <!-- CITY -->
                     <div class="col-md-6 mb-3">
                       <h6 for="city" class="form-label">City<span class="text-danger">*</span></h6>
                       <div class="input-group">
@@ -327,33 +394,55 @@
                         <input type="text" class="form-control" name="city" id="city" placeholder="Your city" required>
                       </div>
                     </div>
+
+                    <!-- PAN AC.No -->
                     <div class="col-md-6 mb-3">
-                      <h6 for="Pan AC.No" class="form-label">Pan AC.No<span class="text-danger">*</span></h6>
+                      <h6 for="pan" class="form-label">Pan AC.No<span class="text-danger">*</span></h6>
                       <div class="input-group">
                         <span class="input-group-text"><i class="bi bi-person-vcard"></i></span>
                         <input type="text" class="form-control" name="pan" id="pan" placeholder="PAN number" required>
                       </div>
                     </div>
 
-                    <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="terms" required onchange="checkForm()">
-                        <label class="form-check-label" for="terms">I agree to <a href="./Teams-&-condition.html">Terms & Conditions </a>and <a href="./privacy-&-policy.html">Privacy Policy</a></label>
+                    <!-- Tax Information -->
+                    <div class="col-12 mb-3">
+                      <div class="card bg-light">
+                        <div class="card-body">
+                          <h6 class="card-title">Tax Exemption Information</h6>
+                          <p class="mb-1">Eligible for deduction under section: Section 80G of the Income Tax Act, 1961.
+                          </p>
+                          <p class="mb-0">Our Income Tax Unique Registration No: u/s 80G(5) & date: AAB TB 7845JE20231,
+                            1-Apr-23</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Terms & Conditions -->
+                    <div class="col-12 mb-3">
+                      <div class="card bg-light">
+                        <div class="card-body">
+                          <h6 class="card-title">Terms & Conditions</h6>
+                          <p class="mb-1">Cheque or DD is subject to realisation.</p>
+                          <p class="mb-0">This Receipt is exempt from levy of Stamp Duty vide Exemption (b) of Article
+                            53 in Schedule 1 of The Indian Stamp Act, 1899.</p>
+                        </div>
                       </div>
                     </div>
 
                     <div class="col-12">
-                      <div class="g-recaptcha" data-sitekey="6LeFGg8sAAAAAPQX1PYjIXdKj-3xkuVBMZNPU3Q6" data-callback="onRecaptchaSuccess"
-                        data-expired-callback="onRecaptchaExpired" data-error-callback="onRecaptchaError">
-                      </div>
-                      <div id="recaptcha-error" class="text-danger mt-2" style="display: none;">
-                        Please complete the "I'm not a robot" verification.
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="terms" required onchange="checkForm()">
+                        <label class="form-check-label" for="terms">I agree to <a href="./Teams-&-condition.html">Terms
+                            & Conditions </a>and <a href="./privacy-&-policy.html">Privacy Policy</a></label>
                       </div>
                     </div>
 
                     <div class="col-12 text-center">
-                      <button type="submit" class="btn btn-primary btn-lg px-5 py-3" id="donateBtn" disabled>
+                      <button type="submit" class="btn btn-primary btn-lg px-5 py-3 me-3" id="donateBtn" disabled>
                         <i class="bi bi-heart-fill me-2"></i>Donate Now
+                      </button>
+                      <button type="button" class="btn btn-outline-secondary btn-lg px-5 py-3" id="clearFormBtn">
+                        <i class="bi bi-arrow-counterclockwise me-2"></i>Clear Form
                       </button>
                     </div>
                   </div>
@@ -365,6 +454,113 @@
       </div>
     </div>
     <!-- End Payment Form -->
+
+    <!-- Modal for QR Code -->
+    <div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="qrModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="qrModalLabel">Complete Your Donation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <p>Scan the QR code below to complete your payment of <strong id="modalAmount">₹0</strong></p>
+            <div class="qr-code-container mb-4">
+              <!-- QR Code Image -->
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://carcinova-ngo.org/donate"
+                alt="QR Code for Payment" class="img-fluid">
+            </div>
+            <div class="d-grid gap-2">
+              <button type="button" class="btn btn-success" id="generateReceiptBtn">
+                <i class="bi bi-receipt me-2"></i>Generate Receipt
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Receipt Template (Hidden) -->
+    <div id="receipt-template" style="display: none;">
+      <div class="receipt-container"
+        style="max-width: 1000px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; font-family: Arial, sans-serif; background: white;">
+        <div class="receipt-header text-center mb-4">
+          <!-- Using the correct logo URL -->
+          <img src="https://ik.imagekit.io/y1q1jlceh/CARCINOVA_LOGO.jpg?tr=w-800" alt="CarciNova Logo"
+            crossorigin="anonymous"
+            style="height: 150px; width: 200px; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto;">
+          <h2 style="margin: 0; color: #2c3e50;">CarciNova Cancer Awareness & Care Foundation</h2>
+          <p style="margin: 5px 0; color: #7f8c8d;">Visakhapatnam, Andhra Pradesh, India</p>
+          <hr style="border-top: 2px solid #2c3e50;">
+        </div>
+
+        <div class="receipt-title text-center mb-4">
+          <h3 style="margin: 0; color: #2c3e50;">DONATION RECEIPT</h3>
+        </div>
+
+        <div class="receipt-details">
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+            <tr>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Receipt No:</strong></td>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;" id="receipt-no-display"></td>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Date:</strong></td>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;" id="receipt-date"></td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Name:</strong></td>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;" colspan="3" id="receipt-name"></td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Address:</strong></td>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;" colspan="3" id="receipt-address"></td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>PAN:</strong></td>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;" id="receipt-pan"></td>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Phone:</strong></td>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;" id="receipt-phone"></td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Amount:</strong></td>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;" id="receipt-amount"></td>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Mode:</strong></td>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;" id="receipt-mode"></td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Amount in Words:</strong></td>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;" colspan="3" id="receipt-words"></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="receipt-footer">
+          <div class="tax-info mb-3">
+            <p><strong>Tax Exemption Information:</strong></p>
+            <p>Eligible for deduction under section: Section 80G of the Income Tax Act, 1961.</p>
+            <p>Our Income Tax Unique Registration No: u/s 80G(5) & date: AAB TB 7845JE20231, 1-Apr-23</p>
+          </div>
+
+          <div class="terms-info mb-4">
+            <p><strong>Terms & Conditions:</strong></p>
+            <p>Cheque or DD is subject to realisation.</p>
+            <p>This Receipt is exempt from levy of Stamp Duty vide Exemption (b) of Article 53 in Schedule 1 of The
+              Indian Stamp Act, 1899.</p>
+          </div>
+
+          <div class="signature-section" style="display: flex; justify-content: space-between; margin-top: 40px;">
+            <div style="text-align: center;">
+              <div style="border-top: 1px solid #000; width: 200px; margin-bottom: 5px;"></div>
+              <p style="margin: 0;">Donor's Signature</p>
+            </div>
+            <div style="text-align: center;">
+              <div style="border-top: 1px solid #000; width: 200px; margin-bottom: 5px;"></div>
+              <p style="margin: 0;">Authorized Signatory</p>
+              <p style="margin: 0;">CarciNova Cancer Awareness & Care Foundation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Transparency Promise Section -->
     <section class="transparency-section py-5 bg-light">
@@ -411,7 +607,7 @@
 
     <!-- quote Section -->
     <section id="quote" class="quote section">
-      <h2>“Together, we can light the path of hope for many.”</h2>
+      <h2>"Together, we can light the path of hope for many."</h2>
     </section><!-- /quote Section -->
 
   </main>
@@ -472,7 +668,7 @@
 
   <!-- Vendor JS Files -->
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <!-- Removed validate.js to fix the error -->
   <script src="../assets/vendor/aos/aos.js"></script>
   <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -480,45 +676,15 @@
   <!-- Main JS File -->
   <script src="../assets/js/main.js"></script>
 
-  <!-- Google reCAPTCHA -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
   <script>
-    // reCAPTCHA state
-    let recaptchaVerified = false;
-
-    // Called when user successfully completes reCAPTCHA
-    function onRecaptchaSuccess(token) {
-      recaptchaVerified = true;
-      document.getElementById('recaptcha-error').style.display = 'none';
-      checkForm();
-    }
-
-    // Called when reCAPTCHA expires (after 2 minutes)
-    function onRecaptchaExpired() {
-      recaptchaVerified = false;
-      document.getElementById('recaptcha-error').style.display = 'block';
-      document.getElementById('recaptcha-error').textContent = 'reCAPTCHA expired. Please verify again.';
-      checkForm();
-    }
-
-    // Called on loading/error
-    function onRecaptchaError() {
-      recaptchaVerified = false;
-      document.getElementById('recaptcha-error').style.display = 'block';
-      document.getElementById('recaptcha-error').textContent = 'reCAPTCHA failed to load. Please try again.';
-      checkForm();
-    }
-
-    // Reset reCAPTCHA (e.g., on form reset)
-    function resetRecaptcha() {
-      if (typeof grecaptcha !== 'undefined') {
-        grecaptcha.reset();
+    // Fix for validate.js error - prevent it from running on our form
+    document.addEventListener('DOMContentLoaded', function () {
+      // Change form class to avoid validate.js interference
+      const form = document.getElementById('donationForm');
+      if (form) {
+        form.className = 'donation-form';
       }
-      recaptchaVerified = false;
-      document.getElementById('recaptcha-error').style.display = 'none';
-      checkForm();
-    }
+    });
 
     // Your existing functions (selectAmount, selectOther, etc.)
     function selectAmount(element, value) {
@@ -534,6 +700,9 @@
 
       document.getElementById('other-amount-container').classList.add('d-none');
       document.getElementById('other-amount').value = '';
+
+      // Update amount in words
+      updateAmountInWords(value);
       checkForm();
     }
 
@@ -559,6 +728,65 @@
       const input = document.getElementById('other-amount');
       const radio = document.getElementById('amountOther');
       radio.value = input.value || 'other';
+
+      // Update amount in words
+      if (input.value) {
+        updateAmountInWords(input.value);
+      }
+    }
+
+    // Function to convert number to words
+    function convertNumberToWords(num) {
+      if (num === "") return "";        // no input then return empty
+
+      const ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
+      const teens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+      const tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+
+      num = parseInt(num);            // convert the string into number
+
+      if (num === 0) return "Zero";
+
+      let words = "";
+
+      if (num >= 1000) {
+        words += ones[Math.floor(num / 1000)] + " Thousand ";
+        num %= 1000;
+      }
+
+      if (num >= 100) {
+        words += ones[Math.floor(num / 100)] + " Hundred ";
+        num %= 100;
+      }
+
+      if (num >= 20) {
+        words += tens[Math.floor(num / 10)] + " ";
+        num %= 10;
+      } else if (num >= 10) {
+        words += teens[num - 10] + " ";
+        num = 0;
+      }
+
+      if (num > 0) {
+        words += ones[num] + " ";
+      }
+
+      return words.trim() + ' Rupees Only';              // trim is used to remove space
+    }
+
+
+    // Update amount in words field
+    function updateAmountInWords(amount) {
+      const amountInWords = convertNumberToWords(parseInt(amount) || 0);
+      document.getElementById('amount-in-words').value = amountInWords;
+    }
+
+    // Generate receipt number
+    function generateReceiptNumber() {
+      const prefix = 'CN';
+      const timestamp = Date.now().toString().slice(-6);
+      const random = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+      return `${prefix}${timestamp}${random}`;
     }
 
     // Main validation function
@@ -569,8 +797,323 @@
         ? document.getElementById('other-amount').value.trim() !== ''
         : true;
 
-      const canSubmit = termsChecked && recaptchaVerified && amountSelected && otherValid;
+      const canSubmit = termsChecked && amountSelected && otherValid;
       document.getElementById('donateBtn').disabled = !canSubmit;
+    }
+
+    // Form submission handler
+    document.getElementById('donationForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Get the donation amount
+      let amount = 0;
+      const selectedAmount = document.querySelector('input[name="amount"]:checked');
+      if (selectedAmount) {
+        if (selectedAmount.value === 'other') {
+          amount = document.getElementById('other-amount').value;
+        } else {
+          amount = selectedAmount.value;
+        }
+      }
+
+      // Set the amount in the modal
+      document.getElementById('modalAmount').textContent = '₹' + amount;
+
+      // Show the modal
+      const qrModal = new bootstrap.Modal(document.getElementById('qrModal'));
+      qrModal.show();
+    });
+
+    // Generate receipt PDF
+    document.getElementById('generateReceiptBtn').addEventListener('click', function () {
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const date = document.getElementById('date').value;
+      const address = document.getElementById('address').value;
+      const pan = document.getElementById('pan').value;
+      const state = document.getElementById('state').value;
+      const city = document.getElementById('city').value;
+      const paymentMode = document.getElementById('payment-mode').value;
+
+      // Get the donation amount
+      let amount = 0;
+      const selectedAmount = document.querySelector('input[name="amount"]:checked');
+      if (selectedAmount) {
+        if (selectedAmount.value === 'other') {
+          amount = document.getElementById('other-amount').value;
+        } else {
+          amount = selectedAmount.value;
+        }
+      }
+
+      const amountInWords = document.getElementById('amount-in-words').value;
+
+      // Generate receipt number if not already set
+      let receiptNo = document.getElementById('receipt-no').value;
+      if (!receiptNo) {
+        receiptNo = generateReceiptNumber();
+        document.getElementById('receipt-no').value = receiptNo;
+      }
+
+      // Update receipt template with data
+      document.getElementById('receipt-no-display').textContent = receiptNo;
+      document.getElementById('receipt-date').textContent = new Date(date).toLocaleDateString('en-IN');
+      document.getElementById('receipt-name').textContent = name;
+      document.getElementById('receipt-address').textContent = address + ', ' + city + ', ' + state;
+      document.getElementById('receipt-pan').textContent = pan;
+      document.getElementById('receipt-phone').textContent = phone;
+      document.getElementById('receipt-amount').textContent = '₹' + amount;
+      document.getElementById('receipt-mode').textContent = paymentMode;
+      document.getElementById('receipt-words').textContent = amountInWords;
+
+      // Generate PDF with logo
+      generatePDFWithLogo();
+
+      // Close the modal
+      const qrModal = bootstrap.Modal.getInstance(document.getElementById('qrModal'));
+      qrModal.hide();
+    });
+
+    // UPDATED: Generate PDF with html2canvas to include the logo
+    function generatePDFWithLogo() {
+      const { jsPDF } = window.jspdf;
+
+      // Create a new image object for the logo
+      const logoImg = new Image();
+      logoImg.crossOrigin = 'anonymous';
+
+      logoImg.onload = function () {
+        const receiptElement = document.getElementById('receipt-template');
+
+        // Show the receipt temporarily for canvas capture
+        receiptElement.style.display = 'block';
+
+        html2canvas(receiptElement, {
+          scale: 2,
+          useCORS: true,
+          allowTaint: false,
+          logging: false,
+          backgroundColor: '#ffffff'
+        }).then(canvas => {
+          // Hide receipt again
+          receiptElement.style.display = 'none';
+
+          const imgData = canvas.toDataURL('image/png');
+          const doc = new jsPDF('p', 'mm', 'a4');
+          const imgWidth = 210; // A4 width in mm
+          const imgHeight = canvas.height * imgWidth / canvas.width;
+
+          // Add the image to PDF
+          doc.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+
+          // Save the PDF
+          doc.save('CarciNova_Donation_Receipt_' + document.getElementById('receipt-no').value + '.pdf');
+        }).catch(error => {
+          console.error('Error with html2canvas:', error);
+          receiptElement.style.display = 'none';
+
+          // Fallback to direct PDF generation with logo
+          generatePDFDirectlyWithLogo();
+        });
+      };
+
+      logoImg.onerror = function () {
+        console.error('Error loading logo');
+        // Fallback to direct PDF generation with logo
+        generatePDFDirectlyWithLogo();
+      };
+
+      // Load the logo with cache-busting parameter
+      logoImg.src = 'https://ik.imagekit.io/y1q1jlceh/CARCINOVA_LOGO.jpg?tr=w-200&' + new Date().getTime();
+    }
+
+    // NEW: Function for direct PDF generation with logo
+    function generatePDFDirectlyWithLogo() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF('p', 'mm', 'a4');
+
+      // Load logo image
+      const logoImg = new Image();
+      logoImg.crossOrigin = 'anonymous';
+
+      logoImg.onload = function () {
+        // Add logo
+        doc.addImage(logoImg, 'JPEG', 85, 10, 40, 20);
+
+        // Continue with rest of PDF
+        addReceiptContentToPDF(doc);
+      };
+
+      logoImg.onerror = function () {
+        console.error('Failed to load logo, generating PDF without it');
+        // Generate PDF without logo
+        addReceiptContentToPDF(doc);
+      };
+
+      logoImg.src = 'https://ik.imagekit.io/y1q1jlceh/CARCINOVA_LOGO.jpg?tr=w-200';
+    }
+
+    // NEW: Helper function to add receipt content to PDF
+    function addReceiptContentToPDF(doc) {
+      // Get form data
+      const data = {
+        receiptNo: document.getElementById('receipt-no').value,
+        date: document.getElementById('date').value,
+        name: document.getElementById('name').value,
+        address: document.getElementById('address').value + ', ' + document.getElementById('city').value + ', ' + document.getElementById('state').value,
+        pan: document.getElementById('pan').value,
+        phone: document.getElementById('phone').value,
+        amount: '₹' + (document.querySelector('input[name="amount"]:checked').value === 'other' ? document.getElementById('other-amount').value : document.querySelector('input[name="amount"]:checked').value),
+        mode: document.getElementById('payment-mode').value,
+        words: document.getElementById('amount-in-words').value
+      };
+
+      // Set font
+      doc.setFont('helvetica');
+
+      // Header text (below logo)
+      doc.setFontSize(16);
+      doc.setTextColor(44, 62, 80);
+      doc.text('CarciNova Cancer Awareness & Care Foundation', 105, 38, { align: 'center' });
+
+      doc.setFontSize(11);
+      doc.setTextColor(127, 140, 141);
+      doc.text('Visakhapatnam, Andhra Pradesh, India', 105, 44, { align: 'center' });
+
+      // Line
+      doc.setDrawColor(44, 62, 80);
+      doc.setLineWidth(0.5);
+      doc.line(20, 48, 190, 48);
+
+      // Title
+      doc.setFontSize(18);
+      doc.setTextColor(44, 62, 80);
+      doc.text('DONATION RECEIPT', 105, 58, { align: 'center' });
+
+      // Receipt Details
+      doc.setFontSize(11);
+      doc.setTextColor(0, 0, 0);
+
+      let yPosition = 70;
+
+      // Receipt No and Date
+      doc.setFont(undefined, 'bold');
+      doc.text('Receipt No:', 20, yPosition);
+      doc.setFont(undefined, 'normal');
+      doc.text(data.receiptNo, 55, yPosition);
+      doc.setFont(undefined, 'bold');
+      doc.text('Date:', 120, yPosition);
+      doc.setFont(undefined, 'normal');
+      doc.text(new Date(data.date).toLocaleDateString('en-IN'), 140, yPosition);
+
+      yPosition += 8;
+
+      // Name
+      doc.setFont(undefined, 'bold');
+      doc.text('Name:', 20, yPosition);
+      doc.setFont(undefined, 'normal');
+      doc.text(data.name, 55, yPosition, { maxWidth: 130 });
+      yPosition += 8;
+
+      // Address
+      doc.setFont(undefined, 'bold');
+      doc.text('Address:', 20, yPosition);
+      doc.setFont(undefined, 'normal');
+      const addressLines = doc.splitTextToSize(data.address, 130);
+      doc.text(addressLines, 55, yPosition);
+      yPosition += addressLines.length * 5 + 3;
+
+      // PAN and Phone
+      doc.setFont(undefined, 'bold');
+      doc.text('PAN:', 20, yPosition);
+      doc.setFont(undefined, 'normal');
+      doc.text(data.pan, 55, yPosition);
+      doc.setFont(undefined, 'bold');
+      doc.text('Phone:', 120, yPosition);
+      doc.setFont(undefined, 'normal');
+      doc.text(data.phone, 140, yPosition);
+
+      yPosition += 8;
+
+      // Amount and Mode
+      doc.setFont(undefined, 'bold');
+      doc.text('Amount:', 20, yPosition);
+      doc.setFont(undefined, 'normal');
+      doc.text(data.amount, 55, yPosition);
+      doc.setFont(undefined, 'bold');
+      doc.text('Mode:', 120, yPosition);
+      doc.setFont(undefined, 'normal');
+      doc.text(data.mode, 140, yPosition);
+
+      yPosition += 8;
+
+      // Amount in Words
+      doc.setFont(undefined, 'bold');
+      doc.text('Amount in Words:', 20, yPosition);
+      doc.setFont(undefined, 'normal');
+      const wordsLines = doc.splitTextToSize(data.words, 130);
+      doc.text(wordsLines, 55, yPosition);
+      yPosition += wordsLines.length * 5 + 10;
+
+      // Tax Information Box
+      doc.setDrawColor(200, 200, 200);
+      doc.setFillColor(248, 249, 250);
+      doc.roundedRect(15, yPosition, 180, 25, 2, 2, 'FD');
+
+      doc.setFontSize(10);
+      doc.setFont(undefined, 'bold');
+      doc.text('Tax Exemption Information:', 20, yPosition + 5);
+      yPosition += 10;
+
+      doc.setFont(undefined, 'normal');
+      doc.setFontSize(9);
+      const taxLines = doc.splitTextToSize('Eligible for deduction under section: Section 80G of the Income Tax Act, 1961.', 170);
+      doc.text(taxLines, 20, yPosition);
+      yPosition += taxLines.length * 4 + 2;
+
+      const regLines = doc.splitTextToSize('Our Income Tax Unique Registration No: u/s 80G(5) & date: AAB TB 7845JE20231, 1-Apr-23', 170);
+      doc.text(regLines, 20, yPosition);
+      yPosition += 20;
+
+      // Terms & Conditions Box
+      doc.setDrawColor(200, 200, 200);
+      doc.setFillColor(248, 249, 250);
+      doc.roundedRect(15, yPosition, 180, 22, 2, 2, 'FD');
+
+      doc.setFontSize(10);
+      doc.setFont(undefined, 'bold');
+      doc.text('Terms & Conditions:', 20, yPosition + 5);
+      yPosition += 10;
+
+      doc.setFont(undefined, 'normal');
+      doc.setFontSize(9);
+      const termsLines = doc.splitTextToSize('Cheque or DD is subject to realisation. This Receipt is exempt from levy of Stamp Duty vide Exemption (b) of Article 53 in Schedule 1 of The Indian Stamp Act, 1899.', 170);
+      doc.text(termsLines, 20, yPosition);
+      yPosition += termsLines.length * 4 + 20;
+
+      // Signatures
+      doc.setFontSize(9);
+      doc.setFont(undefined, 'normal');
+
+      // Donor Signature
+      doc.line(30, yPosition, 75, yPosition);
+      doc.text('Donor\'s Signature', 52, yPosition + 5, { align: 'center' });
+
+      // Authorized Signature
+      doc.line(125, yPosition, 170, yPosition);
+      doc.text('Authorized Signatory', 147, yPosition + 5, { align: 'center' });
+      doc.setFontSize(8);
+      doc.text('CarciNova Foundation', 147, yPosition + 10, { align: 'center' });
+
+      // Save the PDF
+      doc.save('CarciNova_Donation_Receipt_' + data.receiptNo + '.pdf');
+    }
+
+    // UPDATED: Also update the fallback generatePDFDirectly function to call the new one
+    function generatePDFDirectly(data) {
+      generatePDFDirectlyWithLogo();
     }
 
     // Listen to other amount input
@@ -579,58 +1122,56 @@
       checkForm();
     });
 
-    // Optional: Reset form & reCAPTCHA
-    document.querySelector('form').addEventListener('reset', () => {
-      setTimeout(resetRecaptcha, 100);
-    });
+    // Set current date as default
+    document.getElementById('date').valueAsDate = new Date();
 
-    // Add hover effects to donation amount buttons
-    document.querySelectorAll('.donation-amount-btn').forEach(btn => {
-      btn.addEventListener('mouseenter', function () {
-        if (!this.classList.contains('bg-primary')) {
-          this.style.backgroundColor = '#e9ecef';
-        }
-      });
-      btn.addEventListener('mouseleave', function () {
-        if (!this.classList.contains('bg-primary')) {
-          this.style.backgroundColor = '';
-        }
-      });
-    });
-
-    // Add hover effects to donation method cards
-    document.querySelectorAll('.donation-method-card').forEach(card => {
-      card.addEventListener('mouseenter', function () {
-        this.style.transform = 'translateY(-5px)';
-        this.style.transition = 'transform 0.3s ease';
-      });
-      card.addEventListener('mouseleave', function () {
-        this.style.transform = 'translateY(0)';
-      });
-    });
-
-    // Add hover effects to transparency cards
-    document.querySelectorAll('.transparency-card').forEach(card => {
-      card.addEventListener('mouseenter', function () {
-        this.style.transform = 'translateY(-3px)';
-        this.style.transition = 'transform 0.3s ease';
-      });
-      card.addEventListener('mouseleave', function () {
-        this.style.transform = 'translateY(0)';
-      });
-    });
+    // Generate receipt number on page load
+    document.getElementById('receipt-no').value = generateReceiptNumber();
 
     // Initialize
     window.onload = () => {
       checkForm();
-      // Auto-reset reCAPTCHA if already rendered
-      if (typeof grecaptcha !== 'undefined') {
-        grecaptcha.reset();
-      }
     };
+
+
+    // Clear Form Button - clears all fields and resets everything
+    document.getElementById('clearFormBtn').addEventListener('click', function () {
+      document.getElementById('donationForm').reset();
+
+      // Reset amount selection buttons
+      document.querySelectorAll('.amount-option').forEach(opt => {
+        opt.classList.remove('bg-primary', 'text-white');
+      });
+
+      // Hide other amount field
+      document.getElementById('other-amount-container').classList.add('d-none');
+
+      // Clear amount in words
+      document.getElementById('amount-in-words').value = '';
+
+      // Regenerate receipt number
+      document.getElementById('receipt-no').value = generateReceiptNumber();
+
+      // Set today’s date again
+      document.getElementById('date').valueAsDate = new Date();
+
+      // Disable donate button again
+      document.getElementById('donateBtn').disabled = true;
+
+      // Uncheck terms
+      document.getElementById('terms').checked = false;
+    });
+
+    // Automatically clear form after PDF is generated
+    document.getElementById('generateReceiptBtn').addEventListener('click', function () {
+      // Existing code runs first (generates PDF)...
+      // Then after 1 second, auto-clear the form
+      setTimeout(() => {
+        document.getElementById('clearFormBtn').click();
+      }, 1000);
+    });
+
   </script>
-
-
 </body>
 
 </html>
