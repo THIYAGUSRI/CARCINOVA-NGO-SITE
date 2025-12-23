@@ -50,8 +50,7 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="../index.html" class="logo d-flex flex-column align-items-center position-relative">
-        <img src="https://ik.imagekit.io/y1q1jlceh/CARCINOVA_LOGO.jpg" alt="" class="sitename"
-          style="width: auto; height: 50px;">
+        <img src="../assets/img/favicon.png" alt="" class="sitename" style="width: auto; height: 50px;">
         <img src="../assets/img/Logo-title.png" alt="" srcset="" class="sitename" style="width: auto; height: 35px;">
       </a>
 
@@ -185,9 +184,9 @@
               <p class="text-muted">Choose the donation method that works best for you</p>
             </div>
 
-            <div class="row g-4">
+            <div class="row g-6">
               <!-- Online Payment -->
-              <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card h-100 border-0 shadow-sm donation-method-card">
                   <div class="card-body text-center p-4">
                     <div class="icon-wrapper mb-3">
@@ -201,7 +200,9 @@
               </div>
 
               <!-- Offline Donation -->
-              <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200" style="cursor: pointer;"
+                onclick="openModel()" data-toggle="tooltip" data-bs-placement="top"
+                title="Click to Check the Bank Details">
                 <div class="card h-100 border-0 shadow-sm donation-method-card">
                   <div class="card-body text-center p-4">
                     <div class="icon-wrapper mb-3">
@@ -209,12 +210,14 @@
                     </div>
                     <h5 class="card-title">Offline Donation</h5>
                     <p class="card-text text-muted small">Cheque to "CarciNova Global Foundation"</p>
+                    <button class="card-text text-muted small border p-2 text-hover-accent">Click Full bank
+                      Details</button>
                   </div>
                 </div>
               </div>
 
               <!-- Recurring Donation -->
-              <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+              <!-- <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                 <div class="card h-100 border-0 shadow-sm donation-method-card">
                   <div class="card-body text-center p-4">
                     <div class="icon-wrapper mb-3">
@@ -225,7 +228,7 @@
                     <span class="badge bg-info">Coming Soon</span>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -295,24 +298,6 @@
                       </div>
                     </div>
 
-                    <!-- MODE OF PAYMENT -->
-                    <div class="col-12 mb-3">
-                      <h6 for="payment-mode" class="form-label">Mode of Payment<span class="text-danger">*</span></h6>
-                      <div class="input-group">
-                        <span class="input-group-text"><i class="bi bi-credit-card"></i></span>
-                        <select class="form-select" name="payment-mode" id="payment-mode" required>
-                          <option value="" disabled selected>Select payment method</option>
-                          <option value="UPI">UPI</option>
-                          <option value="Credit Card">Credit Card</option>
-                          <option value="Debit Card">Debit Card</option>
-                          <option value="Net Banking">Net Banking</option>
-                          <option value="Cheque">Cheque</option>
-                          <option value="Demand Draft">Demand Draft</option>
-                          <option value="Cash">Cash</option>
-                        </select>
-                      </div>
-                    </div>
-
                     <!-- DATE -->
                     <div class="col-md-6 mb-3">
                       <h6 for="date" class="form-label">Date<span class="text-danger">*</span></h6>
@@ -360,6 +345,15 @@
                         <input type="tel" class="form-control" name="phone" id="phone" placeholder="10-digit number"
                           required pattern="[0-9]*" inputmode="numeric"
                           onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                      </div>
+                    </div>
+
+                    <!-- MODE OF PAYMENT -->
+                    <div class="col-md-6 mb-3">
+                      <h6 for="payment-mode" class="form-label">Mode of Payment<span class="text-danger">*</span></h6>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-credit-card"></i></span>
+                        <label class="form-control" name="payment-mode" id="payment-mode">UPI Payment</label>
                       </div>
                     </div>
 
@@ -665,7 +659,52 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>©<span>Copyright</span> <strong class="px-1 sitename">CarciNova NGO.</strong> <span>All Rights Reserved</span></p>
+      <p>©<span>Copyright</span> <strong class="px-1 sitename">CarciNova NGO.</strong> <span>All Rights Reserved</span>
+      </p>
+    </div>
+
+
+
+    <!-- Modal Popup -->
+    <div class="modal fade" id="donationModal" tabindex="-1" aria-labelledby="donationModalLabel" aria-hidden="true"
+      onclick="closeModel()">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="donationModalLabel" style="font-weight: bolder; color: var(--accent-color);">
+              Bank Account Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li style="color: var(--accent-color); font-weight: bold; display:flex; font-size:larger"><label
+                  style="width: 150px; display:flex; justify-content: space-between;"> Account name <span
+                    style="padding-right: 10px;"> : </span></label><span
+                  style="font-weight: bolder; color:#000;">CARCINOVA GLOBAL FOUNDATION</span></li>
+              <li style="color: var(--accent-color); font-weight: bold; display:flex; font-size:larger"><label
+                  style="width: 150px; display:flex; justify-content: space-between;"> Account number <span
+                    style="padding-right: 10px;"> : </span></label><span
+                  style="font-weight: bolder; color:#000;">44615081146</span></li>
+              <li style="color: var(--accent-color); font-weight: bold; display:flex; font-size:larger"><label
+                  style="width: 150px; display:flex; justify-content: space-between;"> Bank name <span
+                    style="padding-right: 10px;"> : </span></label><span style="font-weight: bolder; color:#000;">State
+                  Bank of India</span></li>
+              <li style="color: var(--accent-color); font-weight: bold; display:flex; font-size:larger"><label
+                  style="width: 150px; display:flex; justify-content: space-between;"> Branch <span
+                    style="padding-right: 10px;"> : </span></label><span style="font-weight: bolder; color:#000;">Sagar
+                  Nagar, Visakhapatnam</span></li>
+              <li style="color: var(--accent-color); font-weight: bold; display:flex; font-size:larger"><label
+                  style="width: 150px; display:flex; justify-content: space-between;"> IFSC code <span
+                    style="padding-right: 10px;"> : </span></label><span
+                  style="font-weight: bolder; color:#000;">SBIN0020862</span></li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+              onclick="closeModel()">Close</button>
+          </div>
+        </div>
+      </div>
     </div>
 
   </footer>
@@ -846,7 +885,7 @@
       const pan = document.getElementById('pan').value;
       const state = document.getElementById('state').value;
       const city = document.getElementById('city').value;
-      const paymentMode = document.getElementById('payment-mode').value;
+      const paymentMode = document.getElementById('payment-mode').textContent;
 
       // Get the donation amount
       let amount = 0;
@@ -968,6 +1007,11 @@
 
     // NEW: Helper function to add receipt content to PDF
     function addReceiptContentToPDF(doc) {
+
+      const pageHeight = 500;
+      const contentHeight = pageHeight * 0.85;
+      const topMargin = (pageHeight - contentHeight) / 2 + 15;
+
       // Get form data
       const data = {
         receiptNo: document.getElementById('receipt-no').value,
@@ -977,7 +1021,7 @@
         pan: document.getElementById('pan').value,
         phone: document.getElementById('phone').value,
         amount: '₹' + (document.querySelector('input[name="amount"]:checked').value === 'other' ? document.getElementById('other-amount').value : document.querySelector('input[name="amount"]:checked').value),
-        mode: document.getElementById('payment-mode').value,
+        mode: "UPI",
         words: document.getElementById('amount-in-words').value
       };
 
@@ -987,27 +1031,27 @@
       // Header text (below logo)
       doc.setFontSize(16);
       doc.setTextColor(44, 62, 80);
-      doc.text('CarciNova Cancer Awareness & Care Foundation', 105, 38, { align: 'center' });
+      doc.text('CarciNova Cancer Awareness & Care Foundation', 105, 38 + topMargin, { align: 'center' });
 
       doc.setFontSize(11);
       doc.setTextColor(127, 140, 141);
-      doc.text('Visakhapatnam, Andhra Pradesh, India', 105, 44, { align: 'center' });
+      doc.text('Visakhapatnam, Andhra Pradesh, India', 105, 44 + topMargin, { align: 'center' });
 
       // Line
       doc.setDrawColor(44, 62, 80);
       doc.setLineWidth(0.5);
-      doc.line(20, 48, 190, 48);
+      doc.line(20, 48 + topMargin, 240, 48 + topMargin);
 
       // Title
       doc.setFontSize(18);
       doc.setTextColor(44, 62, 80);
-      doc.text('DONATION RECEIPT', 105, 58, { align: 'center' });
+      doc.text('DONATION RECEIPT', 105, 58 + topMargin, { align: 'center' });
 
       // Receipt Details
       doc.setFontSize(11);
       doc.setTextColor(0, 0, 0);
 
-      let yPosition = 70;
+      let yPosition = topMargin + 70;
 
       // Receipt No and Date
       doc.setFont(undefined, 'bold');
@@ -1032,7 +1076,7 @@
       doc.setFont(undefined, 'bold');
       doc.text('Address:', 20, yPosition);
       doc.setFont(undefined, 'normal');
-      const addressLines = doc.splitTextToSize(data.address, 130);
+      const addressLines = doc.splitTextToSize(data.address, 180);
       doc.text(addressLines, 55, yPosition);
       yPosition += addressLines.length * 5 + 3;
 
@@ -1064,14 +1108,14 @@
       doc.setFont(undefined, 'bold');
       doc.text('Amount in Words:', 20, yPosition);
       doc.setFont(undefined, 'normal');
-      const wordsLines = doc.splitTextToSize(data.words, 130);
+      const wordsLines = doc.splitTextToSize(data.words, 180);
       doc.text(wordsLines, 55, yPosition);
       yPosition += wordsLines.length * 5 + 10;
 
       // Tax Information Box
       doc.setDrawColor(200, 200, 200);
       doc.setFillColor(248, 249, 250);
-      doc.roundedRect(15, yPosition, 180, 25, 2, 2, 'FD');
+      doc.roundedRect(15, yPosition, 230, 25, 2, 2, 'FD');
 
       doc.setFontSize(10);
       doc.setFont(undefined, 'bold');
@@ -1080,7 +1124,7 @@
 
       doc.setFont(undefined, 'normal');
       doc.setFontSize(9);
-      const taxLines = doc.splitTextToSize('Eligible for deduction under section: Section 80G of the Income Tax Act, 1961.', 170);
+      const taxLines = doc.splitTextToSize('Eligible for deduction under section: Section 80G of the Income Tax Act, 1961.', 210);
       doc.text(taxLines, 20, yPosition);
       yPosition += taxLines.length * 4 + 2;
 
@@ -1091,7 +1135,7 @@
       // Terms & Conditions Box
       doc.setDrawColor(200, 200, 200);
       doc.setFillColor(248, 249, 250);
-      doc.roundedRect(15, yPosition, 180, 22, 2, 2, 'FD');
+      doc.roundedRect(15, yPosition, 230, 22, 2, 2, 'FD');
 
       doc.setFontSize(10);
       doc.setFont(undefined, 'bold');
@@ -1100,7 +1144,7 @@
 
       doc.setFont(undefined, 'normal');
       doc.setFontSize(9);
-      const termsLines = doc.splitTextToSize('Cheque or DD is subject to realisation. This Receipt is exempt from levy of Stamp Duty vide Exemption (b) of Article 53 in Schedule 1 of The Indian Stamp Act, 1899.', 170);
+      const termsLines = doc.splitTextToSize('Cheque or DD is subject to realisation. This Receipt is exempt from levy of Stamp Duty vide Exemption (b) of Article 53 in Schedule 1 of The Indian Stamp Act, 1899.', 210);
       doc.text(termsLines, 20, yPosition);
       yPosition += termsLines.length * 4 + 20;
 
@@ -1182,6 +1226,16 @@
       }, 1000);
     });
 
+
+    function openModel() {
+      const donationModal = new bootstrap.Modal(document.getElementById('donationModal'));
+      donationModal.show();
+    }
+
+    function closeModel() {
+      const donationModal = bootstrap.Modal.getInstance(document.getElementById('donationModal'));
+      donationModal.hide();
+    }
   </script>
 </body>
 

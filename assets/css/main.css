@@ -493,6 +493,10 @@ h6 {
   position: relative;
 }
 
+.text-hover-accent:hover {
+  color: var(--accent-color) !important;
+}
+
 .footer .icon {
   color: var(--accent-color);
   margin-right: 15px;
