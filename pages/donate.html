@@ -5,8 +5,9 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Donate</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <meta name="description"
+    content="Support CarciNova's mission in cancer awareness and early detection. Your donation helps save lives in rural Andhra Pradesh.">
+  <meta name="keywords" content="donate, cancer awareness, NGO, 80G, tax exemption, CarciNova">
 
   <!-- Favicons -->
   <link href="../assets/img/favicon.png" rel="icon">
@@ -25,33 +26,27 @@
   <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
   <!-- Main CSS File -->
   <link href="../assets/css/main.css" rel="stylesheet">
 
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-  <!-- jsPDF for PDF generation -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
   <!-- =======================================================
   * Template Name: EstateAgency
-  * Template URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
   * Updated: Aug 09 2024 with Bootstrap v5.3.3
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
 
-<body class="properties-page">
+<body class="donate-page">
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="../index.html" class="logo d-flex flex-column align-items-center position-relative">
-        <img src="../assets/img/favicon.png" alt="" class="sitename" style="width: auto; height: 50px;">
-        <img src="../assets/img/Logo-title.png" alt="" srcset="" class="sitename" style="width: auto; height: 35px;">
+        <img src="../assets/img/favicon.png" alt="CarciNova Logo" class="sitename" style="width: auto; height: 50px;">
+        <img src="../assets/img/Logo-title.png" alt="CarciNova Global Foundation" class="sitename"
+          style="width: auto; height: 35px;">
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -72,7 +67,7 @@
               <li><a href="Stories-of-Hope.html">Stories of Hope</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="#"><span style="color: var(--accent-color);">Get Involve</span> <i
+          <li class="dropdown"><a href="#"><span style="color: var(--accent-color);">Get Involved</span> <i
                 class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="donate.html" style="color: var(--accent-color);">Donate</a></li>
@@ -117,14 +112,6 @@
           </div>
         </div>
       </div>
-      <nav class="breadcrumbs">
-        <div class="container">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Donate</li>
-          </ol>
-        </div>
-      </nav>
     </div><!-- End Page Title -->
 
     <!-- Hero Section -->
@@ -186,23 +173,23 @@
 
             <div class="row g-6">
               <!-- Online Payment -->
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="100" style="cursor: pointer;"
+                onclick="openQRModel()">
                 <div class="card h-100 border-0 shadow-sm donation-method-card">
                   <div class="card-body text-center p-4">
                     <div class="icon-wrapper mb-3">
                       <i class="bi bi-credit-card display-4" style="color: var(--accent-color);"></i>
                     </div>
                     <h5 class="card-title">Online Payment</h5>
-                    <p class="card-text text-muted small">UPI / Netbanking</p>
-                    <span class="badge bg-success">Preferred</span>
+                    <p class="card-text text-muted small">UPI Transaction</p>
+                    <button class="btn btn-success text-white rounded-5 small">Click Pay Online</button>
                   </div>
                 </div>
               </div>
 
               <!-- Offline Donation -->
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="200" style="cursor: pointer;"
-                onclick="openModel()" data-toggle="tooltip" data-bs-placement="top"
-                title="Click to Check the Bank Details">
+                onclick="openModel()">
                 <div class="card h-100 border-0 shadow-sm donation-method-card">
                   <div class="card-body text-center p-4">
                     <div class="icon-wrapper mb-3">
@@ -210,126 +197,88 @@
                     </div>
                     <h5 class="card-title">Offline Donation</h5>
                     <p class="card-text text-muted small">Cheque to "CarciNova Global Foundation"</p>
-                    <button class="card-text text-muted small border p-2 text-hover-accent">Click Full bank
-                      Details</button>
+                    <button class="btn btn-success text-white rounded-5 small">Click to View Bank Details</button>
                   </div>
                 </div>
               </div>
-
-              <!-- Recurring Donation -->
-              <!-- <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="card h-100 border-0 shadow-sm donation-method-card">
-                  <div class="card-body text-center p-4">
-                    <div class="icon-wrapper mb-3">
-                      <i class="bi bi-arrow-repeat display-4" style="color: var(--accent-color);"></i>
-                    </div>
-                    <h5 class="card-title">Recurring Donation</h5>
-                    <p class="card-text text-muted small">Monthly donor program</p>
-                    <span class="badge bg-info">Coming Soon</span>
-                  </div>
-                </div>
-              </div> -->
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Start Payment Form -->
+    <!-- Payment Form -->
     <div class="payment-form section-bg py-5">
       <div class="container" data-aos="fade-up">
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="text-center mb-5">
-              <h2>Make Your Donation</h2>
-              <p class="text-muted">Fill in your details to make a secure donation</p>
+              <h2>Request Form For 80G Certificate</h2>
+              <p class="text-muted">Fill in your details to request 80G Certificate</p>
             </div>
 
             <div class="card shadow border-0">
               <div class="card-body p-4">
-                <form id="donationForm" action="#" method="post" class="donation-form">
+                <form id="donationForm" class="donation-form">
                   <div class="row gy-4">
-                    <!-- Donation Amount - HORIZONTAL BUTTONS -->
-                    <div class="mb-4">
-                      <h5 class="form-label">Donation Amount<span class="text-danger">*</span></h5>
-                      <div class="d-flex flex-wrap gap-2 mt-3">
-                        <div class="amount-option p-3 border rounded text-center flex-fill donation-amount-btn"
-                          style="min-width: 100px; cursor: pointer;" onclick="selectAmount(this, '500')">
-                          <input type="radio" name="amount" value="500" id="amount500" required style="display: none;">
-                          <label class="d-block fw-bold">₹500</label>
-                        </div>
-                        <div class="amount-option p-3 border rounded text-center flex-fill donation-amount-btn"
-                          style="min-width: 100px; cursor: pointer;" onclick="selectAmount(this, '1000')">
-                          <input type="radio" name="amount" value="1000" id="amount1000" required
-                            style="display: none;">
-                          <label class="d-block fw-bold">₹1000</label>
-                        </div>
-                        <div class="amount-option p-3 border rounded text-center flex-fill donation-amount-btn"
-                          style="min-width: 100px; cursor: pointer;" onclick="selectAmount(this, '2000')">
-                          <input type="radio" name="amount" value="2000" id="amount2000" required
-                            style="display: none;">
-                          <label class="d-block fw-bold">₹2000</label>
-                        </div>
-                        <div class="amount-option p-3 border rounded text-center flex-fill donation-amount-btn"
-                          style="min-width: 100px; cursor: pointer;" onclick="selectOther(this)">
-                          <input type="radio" name="amount" value="other" id="amountOther" required
-                            style="display: none;">
-                          <span class="d-block fw-bold">Other</span>
-                        </div>
-                      </div>
-
-                      <!-- OTHER AMOUNT INPUT - SEPARATE ROW (HIDDEN BY DEFAULT) -->
-                      <div id="other-amount-container" class="d-none mt-3">
-                        <label for="other-amount" class="form-label">Enter Custom Amount</label>
-                        <input type="text" class="form-control form-control-lg" name="other-amount" id="other-amount"
-                          placeholder="Enter Amount" inputmode="numeric"
-                          oninput="this.value = this.value.replace(/[^0-9]/g, ''); updateOtherValue();">
-                      </div>
-                    </div>
-
-                    <!-- AMOUNT IN WORDS -->
-                    <div class="col-12 mb-3">
-                      <h6 for="amount-in-words" class="form-label">Amount in Words<span class="text-danger">*</span>
-                      </h6>
-                      <div class="input-group">
-                        <span class="input-group-text"><i class="bi bi-pen"></i></span>
-                        <input type="text" class="form-control" name="amount-in-words" id="amount-in-words"
-                          placeholder="Amount in words" readonly>
-                      </div>
-                    </div>
-
-                    <!-- DATE -->
+                    <!-- Donation Amount -->
                     <div class="col-md-6 mb-3">
-                      <h6 for="date" class="form-label">Date<span class="text-danger">*</span></h6>
+                      <label for="amount" class="form-label">Donated Amount<span class="text-danger">*</span></label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-currency-rupee"></i></span>
+                        <input type="text" class="form-control" name="amount" id="amount"
+                          placeholder="Enter Donated Amount" inputmode="numeric"
+                          oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
+                      </div>
+                    </div>
+
+                    <!-- Date -->
+                    <div class="col-md-6 mb-3">
+                      <label for="date" class="form-label">Donated Date<span class="text-danger">*</span></label>
                       <div class="input-group">
                         <span class="input-group-text"><i class="bi bi-calendar"></i></span>
                         <input type="date" class="form-control" name="date" id="date" required>
                       </div>
                     </div>
 
-                    <!-- RECEIPT NO -->
+                    <!-- Mode of Payment -->
                     <div class="col-md-6 mb-3">
-                      <h6 for="receipt-no" class="form-label">Receipt No<span class="text-danger">*</span></h6>
+                      <label for="payment-mode" class="form-label">Mode of Payment<span
+                          class="text-danger">*</span></label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-credit-card"></i></span>
+                        <select class="form-select" name="payment-mode" id="payment-mode" required>
+                          <option value="" disabled selected>Select payment mode</option>
+                          <option value="UPI Payment">UPI Payment</option>
+                          <option value="Cheque/DD">Cheque/DD</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Transaction ID -->
+                    <div class="col-md-6 mb-3">
+                      <label for="receipt-no" class="form-label">Transaction ID or Cheque/DD Number<span
+                          class="text-danger">*</span></label>
                       <div class="input-group">
                         <span class="input-group-text"><i class="bi bi-receipt"></i></span>
                         <input type="text" class="form-control" name="receipt-no" id="receipt-no"
-                          placeholder="Receipt number" readonly>
+                          placeholder="Transaction ID or Cheque/DD Number" required>
                       </div>
                     </div>
 
-                    <!-- NAME -->
+                    <!-- Name -->
                     <div class="col-md-6 mb-3">
-                      <h6 for="name" class="form-label">Full Name<span class="text-danger">*</span></h6>
+                      <label for="name" class="form-label">Full Name<span class="text-danger">*</span></label>
                       <div class="input-group">
                         <span class="input-group-text"><i class="bi bi-person"></i></span>
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Enter the Full Name"
-                          required>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Enter Full Name"
+                          pattern="[A-Za-z\s]*" required>
                       </div>
                     </div>
 
-                    <!-- EMAIL -->
+                    <!-- Email -->
                     <div class="col-md-6 mb-3">
-                      <h6 for="email" class="form-label">Email Address<span class="text-danger">*</span></h6>
+                      <label for="email" class="form-label">Email Address<span class="text-danger">*</span></label>
                       <div class="input-group">
                         <span class="input-group-text"><i class="bi bi-envelope"></i></span>
                         <input type="email" class="form-control" name="email" id="email" placeholder="your@email.com"
@@ -337,39 +286,30 @@
                       </div>
                     </div>
 
-                    <!-- PHONE NO -->
+                    <!-- Phone -->
                     <div class="col-md-6 mb-3">
-                      <h6 for="phone" class="form-label">Phone Number<span class="text-danger">*</span></h6>
+                      <label for="phone" class="form-label">Phone Number<span class="text-danger">*</span></label>
                       <div class="input-group">
                         <span class="input-group-text"><i class="bi bi-phone"></i></span>
                         <input type="tel" class="form-control" name="phone" id="phone" placeholder="10-digit number"
-                          required pattern="[0-9]*" inputmode="numeric"
-                          onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                          maxlength="10" pattern="[0-9]*" inputmode="numeric"
+                          onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
                       </div>
                     </div>
 
-                    <!-- MODE OF PAYMENT -->
+                    <!-- PAN -->
                     <div class="col-md-6 mb-3">
-                      <h6 for="payment-mode" class="form-label">Mode of Payment<span class="text-danger">*</span></h6>
+                      <label for="pan" class="form-label">PAN Number<span class="text-danger">*</span></label>
                       <div class="input-group">
-                        <span class="input-group-text"><i class="bi bi-credit-card"></i></span>
-                        <label class="form-control" name="payment-mode" id="payment-mode">UPI Payment</label>
+                        <span class="input-group-text"><i class="bi bi-person-vcard"></i></span>
+                        <input type="text" class="form-control" name="pan" id="pan" placeholder="e.g. ABCDE1234F"
+                          style="text-transform: uppercase;" required>
                       </div>
                     </div>
 
-                    <!-- ADDRESS -->
-                    <div class="col-12 mb-3">
-                      <h6 for="address" class="form-label">Address<span class="text-danger">*</span></h6>
-                      <div class="input-group">
-                        <span class="input-group-text"><i class="bi bi-house"></i></span>
-                        <textarea class="form-control" name="address" id="address" rows="3"
-                          placeholder="Complete address" required></textarea>
-                      </div>
-                    </div>
-
-                    <!-- STATE -->
+                    <!-- State -->
                     <div class="col-md-6 mb-3">
-                      <h6 for="state" class="form-label">State<span class="text-danger">*</span></h6>
+                      <label for="state" class="form-label">State<span class="text-danger">*</span></label>
                       <div class="input-group">
                         <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
                         <select class="form-select" name="state" id="state" required>
@@ -384,21 +324,22 @@
                       </div>
                     </div>
 
-                    <!-- CITY -->
+                    <!-- City -->
                     <div class="col-md-6 mb-3">
-                      <h6 for="city" class="form-label">City<span class="text-danger">*</span></h6>
+                      <label for="city" class="form-label">City<span class="text-danger">*</span></label>
                       <div class="input-group">
                         <span class="input-group-text"><i class="bi bi-building"></i></span>
                         <input type="text" class="form-control" name="city" id="city" placeholder="Your city" required>
                       </div>
                     </div>
 
-                    <!-- PAN AC.No -->
-                    <div class="col-md-6 mb-3">
-                      <h6 for="pan" class="form-label">Pan AC.No<span class="text-danger">*</span></h6>
+                    <!-- Address -->
+                    <div class="col-12 mb-3">
+                      <label for="address" class="form-label">Address<span class="text-danger">*</span></label>
                       <div class="input-group">
-                        <span class="input-group-text"><i class="bi bi-person-vcard"></i></span>
-                        <input type="text" class="form-control" name="pan" id="pan" placeholder="PAN number" required>
+                        <span class="input-group-text"><i class="bi bi-house"></i></span>
+                        <textarea class="form-control" name="address" id="address" rows="3"
+                          placeholder="Complete address" required></textarea>
                       </div>
                     </div>
 
@@ -409,7 +350,7 @@
                           <h6 class="card-title">Tax Exemption Information</h6>
                           <p class="mb-1">Eligible for deduction under section: Section 80G of the Income Tax Act, 1961.
                           </p>
-                          <p class="mb-0">Our Income Tax Unique Registration No: u/s 80G(5) & date: AAB TB 7845JE20231,
+                          <p class="mb-0">Our Income Tax Unique Registration No: u/s 80G(5) & date: AABTB7845JE20231,
                             1-Apr-23</p>
                         </div>
                       </div>
@@ -427,17 +368,19 @@
                       </div>
                     </div>
 
-                    <div class="col-12">
+                    <div class="col-12 mb-3">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="terms" required onchange="checkForm()">
-                        <label class="form-check-label" for="terms">I agree to <a href="./Teams-&-condition.html">Terms
-                            & Conditions </a>and <a href="./privacy-&-policy.html">Privacy Policy</a></label>
+                        <input class="form-check-input" type="checkbox" id="terms" required>
+                        <label class="form-check-label" for="terms">
+                          I agree to <a href="./Terms-&-Conditions.html">Terms & Conditions</a> and <a
+                            href="./privacy-&-policy.html">Privacy Policy</a>
+                        </label>
                       </div>
                     </div>
 
                     <div class="col-12 text-center">
                       <button type="submit" class="btn btn-primary btn-lg px-5 py-3 me-3" id="donateBtn" disabled>
-                        <i class="bi bi-heart-fill me-2"></i>Donate Now
+                        <i class="bi bi-heart-fill me-2"></i>Submit Request
                       </button>
                       <button type="button" class="btn btn-outline-secondary btn-lg px-5 py-3" id="clearFormBtn">
                         <i class="bi bi-arrow-counterclockwise me-2"></i>Clear Form
@@ -446,114 +389,6 @@
                   </div>
                 </form>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Payment Form -->
-
-    <!-- Modal for QR Code -->
-    <div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="qrModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="qrModalLabel">Complete Your Donation</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body text-center">
-            <p>Scan the QR code below to complete your payment of <strong id="modalAmount">₹0</strong></p>
-            <div class="qr-code-container mb-4">
-              <!-- QR Code Image -->
-              <img src="../assets/img/QR-CODE.png"
-                alt="QR Code for Payment" class="img-fluid" style="height: 475px;">
-            </div>
-            <div class="d-grid gap-2">
-              <button type="button" class="btn btn-success" id="generateReceiptBtn">
-                <i class="bi bi-receipt me-2"></i>Generate Receipt
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Receipt Template (Hidden) -->
-    <div id="receipt-template" style="display: none;">
-      <div class="receipt-container"
-        style="max-width: 1000px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; font-family: Arial, sans-serif; background: white;">
-        <div class="receipt-header text-center mb-4">
-          <!-- Using the correct logo URL -->
-          <img src="https://ik.imagekit.io/y1q1jlceh/CARCINOVA_LOGO.jpg?tr=w-800" alt="CarciNova Logo"
-            crossorigin="anonymous"
-            style="height: 150px; width: 200px; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto;">
-          <h2 style="margin: 0; color: #2c3e50;">CarciNova Cancer Awareness & Care Foundation</h2>
-          <p style="margin: 5px 0; color: #7f8c8d;">Visakhapatnam, Andhra Pradesh, India</p>
-          <hr style="border-top: 2px solid #2c3e50;">
-        </div>
-
-        <div class="receipt-title text-center mb-4">
-          <h3 style="margin: 0; color: #2c3e50;">DONATION RECEIPT</h3>
-        </div>
-
-        <div class="receipt-details">
-          <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-            <tr>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Receipt No:</strong></td>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;" id="receipt-no-display"></td>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Date:</strong></td>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;" id="receipt-date"></td>
-            </tr>
-            <tr>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Name:</strong></td>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;" colspan="3" id="receipt-name"></td>
-            </tr>
-            <tr>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Address:</strong></td>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;" colspan="3" id="receipt-address"></td>
-            </tr>
-            <tr>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>PAN:</strong></td>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;" id="receipt-pan"></td>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Phone:</strong></td>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;" id="receipt-phone"></td>
-            </tr>
-            <tr>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Amount:</strong></td>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;" id="receipt-amount"></td>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Mode:</strong></td>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;" id="receipt-mode"></td>
-            </tr>
-            <tr>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Amount in Words:</strong></td>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;" colspan="3" id="receipt-words"></td>
-            </tr>
-          </table>
-        </div>
-
-        <div class="receipt-footer">
-          <div class="tax-info mb-3">
-            <p><strong>Tax Exemption Information:</strong></p>
-            <p>Eligible for deduction under section: Section 80G of the Income Tax Act, 1961.</p>
-            <p>Our Income Tax Unique Registration No: u/s 80G(5) & date: AAB TB 7845JE20231, 1-Apr-23</p>
-          </div>
-
-          <div class="terms-info mb-4">
-            <p><strong>Terms & Conditions:</strong></p>
-            <p>Cheque or DD is subject to realisation.</p>
-            <p>This Receipt is exempt from levy of Stamp Duty vide Exemption (b) of Article 53 in Schedule 1 of The
-              Indian Stamp Act, 1899.</p>
-          </div>
-
-          <div class="signature-section" style="display: flex; justify-content: space-between; margin-top: 40px;">
-            <div style="text-align: center;">
-              <div style="border-top: 1px solid #000; width: 200px; margin-bottom: 5px;"></div>
-              <p style="margin: 0;">Donor's Signature</p>
-            </div>
-            <div style="text-align: center;">
-              <div style="border-top: 1px solid #000; width: 200px; margin-bottom: 5px;"></div>
-              <p style="margin: 0;">Authorized Signatory</p>
-              <p style="margin: 0;">CarciNova Cancer Awareness & Care Foundation</p>
             </div>
           </div>
         </div>
@@ -603,10 +438,10 @@
       </div>
     </section>
 
-    <!-- quote Section -->
+    <!-- Quote Section -->
     <section id="quote" class="quote section">
       <h2>"Together, we can light the path of hope for many."</h2>
-    </section><!-- /quote Section -->
+    </section>
 
   </main>
 
@@ -620,7 +455,6 @@
             <p class="h6" style="font-size: 15px;">Carcinova, C/o Janani hospital 9-137/2/35, GCC layout,</p>
             <p class="h6" style="font-size: 15px;">Kommadhi Double road, Madhurawada, Vizag-530048</p>
           </div>
-
         </div>
 
         <div class="col-lg-3 col-md-6 d-flex">
@@ -649,12 +483,14 @@
           <h4>Follow Us</h4>
           <div class="social-links d-flex">
             <a href="https://x.com/Carcinova_" class="twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="https://www.facebook.com/people/Carcinova-Global-Foundation/61586203910743/" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/carcinovaglobalfoundation/" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/carcinova-global-foundation/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.facebook.com/people/Carcinova-Global-Foundation/61586203910743/" class="facebook"><i
+                class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/carcinovaglobalfoundation/" class="instagram"><i
+                class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/carcinova-global-foundation/" class="linkedin"><i
+                class="bi bi-linkedin"></i></a>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -662,52 +498,70 @@
       <p>©<span>Copyright</span> <strong class="px-1 sitename">CarciNova NGO.</strong> <span>All Rights Reserved</span>
       </p>
     </div>
+  </footer>
 
+  <!-- Bank Details Modal -->
+  <div class="modal fade" id="donationModal" tabindex="-1" aria-labelledby="donationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="donationModalLabel" style="font-weight: bolder; color: var(--accent-color);">Bank
+            Account Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="list-unstyled">
+            <li class="d-flex mb-3"><strong class="me-2">Account Name:</strong> <span>CARCINOVA GLOBAL FOUNDATION</span>
+            </li>
+            <li class="d-flex mb-3"><strong class="me-2">Account Number:</strong> <span>44615081146</span></li>
+            <li class="d-flex mb-3"><strong class="me-2">Bank Name:</strong> <span>State Bank of India</span></li>
+            <li class="d-flex mb-3"><strong class="me-2">Branch:</strong> <span>Sagar Nagar, Visakhapatnam</span></li>
+            <li class="d-flex mb-3"><strong class="me-2">IFSC Code:</strong> <span>SBIN0020862</span></li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
-    <!-- Modal Popup -->
-    <div class="modal fade" id="donationModal" tabindex="-1" aria-labelledby="donationModalLabel" aria-hidden="true"
-      onclick="closeModel()">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="donationModalLabel" style="font-weight: bolder; color: var(--accent-color);">
-              Bank Account Details</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <ul>
-              <li style="color: var(--accent-color); font-weight: bold; display:flex; font-size:larger"><label
-                  style="width: 150px; display:flex; justify-content: space-between;"> Account name <span
-                    style="padding-right: 10px;"> : </span></label><span
-                  style="font-weight: bolder; color:#000;">CARCINOVA GLOBAL FOUNDATION</span></li>
-              <li style="color: var(--accent-color); font-weight: bold; display:flex; font-size:larger"><label
-                  style="width: 150px; display:flex; justify-content: space-between;"> Account number <span
-                    style="padding-right: 10px;"> : </span></label><span
-                  style="font-weight: bolder; color:#000;">44615081146</span></li>
-              <li style="color: var(--accent-color); font-weight: bold; display:flex; font-size:larger"><label
-                  style="width: 150px; display:flex; justify-content: space-between;"> Bank name <span
-                    style="padding-right: 10px;"> : </span></label><span style="font-weight: bolder; color:#000;">State
-                  Bank of India</span></li>
-              <li style="color: var(--accent-color); font-weight: bold; display:flex; font-size:larger"><label
-                  style="width: 150px; display:flex; justify-content: space-between;"> Branch <span
-                    style="padding-right: 10px;"> : </span></label><span style="font-weight: bolder; color:#000;">Sagar
-                  Nagar, Visakhapatnam</span></li>
-              <li style="color: var(--accent-color); font-weight: bold; display:flex; font-size:larger"><label
-                  style="width: 150px; display:flex; justify-content: space-between;"> IFSC code <span
-                    style="padding-right: 10px;"> : </span></label><span
-                  style="font-weight: bolder; color:#000;">SBIN0020862</span></li>
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-              onclick="closeModel()">Close</button>
+  <!-- QR Code Modal -->
+  <div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="qrModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="qrModalLabel">QR Scan for UPI Donation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p>Scan the QR code below to donate via UPI.</p>
+          <div class="qr-code-container mb-4">
+            <img src="../assets/img/QR-CODE.png" alt="UPI QR Code for CarciNova Donation" class="img-fluid"
+              style="max-height: 500px;">
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-  </footer>
+  <!-- Request Send Success Modal -->
+  <!-- Success Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="successModalLabel">🎉 Thank You!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center py-4">
+          <i class="bi bi-heart-fill text-success display-1 mb-3"></i>
+          <p class="lead">Your donation request has been submitted successfully.</p>
+          <p>We will send your 80G certificate to your email soon.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
@@ -718,524 +572,103 @@
 
   <!-- Vendor JS Files -->
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- Removed validate.js to fix the error -->
   <script src="../assets/vendor/aos/aos.js"></script>
   <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
 
   <!-- Main JS File -->
   <script src="../assets/js/main.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    // Fix for validate.js error - prevent it from running on our form
-    document.addEventListener('DOMContentLoaded', function () {
-      // Change form class to avoid validate.js interference
-      const form = document.getElementById('donationForm');
-      if (form) {
-        form.className = 'donation-form';
-      }
+    // Initialize EmailJS
+    emailjs.init("FENJpUjw3ZLYziysD");
+
+
+    const termsCheckbox = document.getElementById('terms');
+    const donateBtn = document.getElementById('donateBtn');
+
+    termsCheckbox.addEventListener('change', function () {
+      donateBtn.disabled = !this.checked;
     });
 
-    // Your existing functions (selectAmount, selectOther, etc.)
-    function selectAmount(element, value) {
-      document.querySelectorAll('.amount-option').forEach(opt => {
-        opt.classList.remove('bg-primary', 'text-white');
-        opt.style.backgroundColor = '';
-        opt.style.color = '';
-      });
-      element.classList.add('bg-primary', 'text-white');
-      const radio = element.querySelector('input[type="radio"]');
-      radio.checked = true;
-      radio.value = value;
-
-      document.getElementById('other-amount-container').classList.add('d-none');
-      document.getElementById('other-amount').value = '';
-
-      // Update amount in words
-      updateAmountInWords(value);
-      checkForm();
-    }
-
-    function selectOther(element) {
-      document.querySelectorAll('.amount-option').forEach(opt => {
-        opt.classList.remove('bg-primary', 'text-white');
-        opt.style.backgroundColor = '';
-        opt.style.color = '';
-      });
-      element.classList.add('bg-primary', 'text-white');
-      const radio = element.querySelector('input[type="radio"]');
-      radio.checked = true;
-
-      const container = document.getElementById('other-amount-container');
-      container.classList.remove('d-none');
-      document.getElementById('other-amount').focus();
-
-      updateOtherValue();
-      checkForm();
-    }
-
-    function updateOtherValue() {
-      const input = document.getElementById('other-amount');
-      const radio = document.getElementById('amountOther');
-      radio.value = input.value || 'other';
-
-      // Update amount in words
-      if (input.value) {
-        updateAmountInWords(input.value);
-      }
-    }
-
-    // Function to convert number to words
-    function convertNumberToWords(num) {
-      if (num === "") return "";        // no input then return empty
-
-      const ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
-      const teens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
-      const tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
-
-      num = parseInt(num);            // convert the string into number
-
-      if (num === 0) return "Zero";
-
-      let words = "";
-
-      if (num >= 1000) {
-        words += ones[Math.floor(num / 1000)] + " Thousand ";
-        num %= 1000;
-      }
-
-      if (num >= 100) {
-        words += ones[Math.floor(num / 100)] + " Hundred ";
-        num %= 100;
-      }
-
-      if (num >= 20) {
-        words += tens[Math.floor(num / 10)] + " ";
-        num %= 10;
-      } else if (num >= 10) {
-        words += teens[num - 10] + " ";
-        num = 0;
-      }
-
-      if (num > 0) {
-        words += ones[num] + " ";
-      }
-
-      return words.trim() + ' Rupees Only';              // trim is used to remove space
-    }
-
-
-    // Update amount in words field
-    function updateAmountInWords(amount) {
-      const amountInWords = convertNumberToWords(parseInt(amount) || 0);
-      document.getElementById('amount-in-words').value = amountInWords;
-    }
-
-    // Generate receipt number
-    function generateReceiptNumber() {
-      const prefix = 'CN';
-      const timestamp = Date.now().toString().slice(-6);
-      const random = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
-      return `${prefix}${timestamp}${random}`;
-    }
-
-    // Main validation function
-    function checkForm() {
-      const termsChecked = document.getElementById('terms').checked;
-      const amountSelected = document.querySelector('input[name="amount"]:checked') !== null;
-      const otherValid = !document.getElementById('other-amount-container').classList.contains('d-none')
-        ? document.getElementById('other-amount').value.trim() !== ''
-        : true;
-
-      const canSubmit = termsChecked && amountSelected && otherValid;
-      document.getElementById('donateBtn').disabled = !canSubmit;
-    }
-
-    // Form submission handler
-    document.getElementById('donationForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      // Get the donation amount
-      let amount = 0;
-      const selectedAmount = document.querySelector('input[name="amount"]:checked');
-      if (selectedAmount) {
-        if (selectedAmount.value === 'other') {
-          amount = document.getElementById('other-amount').value;
-        } else {
-          amount = selectedAmount.value;
-        }
-      }
-
-      // Set the amount in the modal
-      document.getElementById('modalAmount').textContent = '₹' + amount;
-
-      // Show the modal
-      const qrModal = new bootstrap.Modal(document.getElementById('qrModal'));
-      qrModal.show();
-    });
-
-    // Generate receipt PDF
-    document.getElementById('generateReceiptBtn').addEventListener('click', function () {
-      // Get form values
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const date = document.getElementById('date').value;
-      const address = document.getElementById('address').value;
-      const pan = document.getElementById('pan').value;
-      const state = document.getElementById('state').value;
-      const city = document.getElementById('city').value;
-      const paymentMode = document.getElementById('payment-mode').textContent;
-
-      // Get the donation amount
-      let amount = 0;
-      const selectedAmount = document.querySelector('input[name="amount"]:checked');
-      if (selectedAmount) {
-        if (selectedAmount.value === 'other') {
-          amount = document.getElementById('other-amount').value;
-        } else {
-          amount = selectedAmount.value;
-        }
-      }
-
-      const amountInWords = document.getElementById('amount-in-words').value;
-
-      // Generate receipt number if not already set
-      let receiptNo = document.getElementById('receipt-no').value;
-      if (!receiptNo) {
-        receiptNo = generateReceiptNumber();
-        document.getElementById('receipt-no').value = receiptNo;
-      }
-
-      // Update receipt template with data
-      document.getElementById('receipt-no-display').textContent = receiptNo;
-      document.getElementById('receipt-date').textContent = new Date(date).toLocaleDateString('en-IN');
-      document.getElementById('receipt-name').textContent = name;
-      document.getElementById('receipt-address').textContent = address + ', ' + city + ', ' + state;
-      document.getElementById('receipt-pan').textContent = pan;
-      document.getElementById('receipt-phone').textContent = phone;
-      document.getElementById('receipt-amount').textContent = '₹' + amount;
-      document.getElementById('receipt-mode').textContent = paymentMode;
-      document.getElementById('receipt-words').textContent = amountInWords;
-
-      // Generate PDF with logo
-      generatePDFWithLogo();
-
-      // Close the modal
-      const qrModal = bootstrap.Modal.getInstance(document.getElementById('qrModal'));
-      qrModal.hide();
-    });
-
-    // UPDATED: Generate PDF with html2canvas to include the logo
-    function generatePDFWithLogo() {
-      const { jsPDF } = window.jspdf;
-
-      // Create a new image object for the logo
-      const logoImg = new Image();
-      logoImg.crossOrigin = 'anonymous';
-
-      logoImg.onload = function () {
-        const receiptElement = document.getElementById('receipt-template');
-
-        // Show the receipt temporarily for canvas capture
-        receiptElement.style.display = 'block';
-
-        html2canvas(receiptElement, {
-          scale: 2,
-          useCORS: true,
-          allowTaint: false,
-          logging: false,
-          backgroundColor: '#ffffff'
-        }).then(canvas => {
-          // Hide receipt again
-          receiptElement.style.display = 'none';
-
-          const imgData = canvas.toDataURL('image/png');
-          const doc = new jsPDF('p', 'mm', 'a4');
-          const imgWidth = 210; // A4 width in mm
-          const imgHeight = canvas.height * imgWidth / canvas.width;
-
-          // Add the image to PDF
-          doc.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-
-          // Save the PDF
-          doc.save('CarciNova_Donation_Receipt_' + document.getElementById('receipt-no').value + '.pdf');
-        }).catch(error => {
-          console.error('Error with html2canvas:', error);
-          receiptElement.style.display = 'none';
-
-          // Fallback to direct PDF generation with logo
-          generatePDFDirectlyWithLogo();
-        });
-      };
-
-      logoImg.onerror = function () {
-        console.error('Error loading logo');
-        // Fallback to direct PDF generation with logo
-        generatePDFDirectlyWithLogo();
-      };
-
-      // Load the logo with cache-busting parameter
-      logoImg.src = 'https://ik.imagekit.io/y1q1jlceh/CARCINOVA_LOGO.jpg?tr=w-200&' + new Date().getTime();
-    }
-
-    // NEW: Function for direct PDF generation with logo
-    function generatePDFDirectlyWithLogo() {
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF('p', 'mm', 'a4');
-
-      // Load logo image
-      const logoImg = new Image();
-      logoImg.crossOrigin = 'anonymous';
-
-      logoImg.onload = function () {
-        // Add logo
-        doc.addImage(logoImg, 'JPEG', 85, 10, 40, 20);
-
-        // Continue with rest of PDF
-        addReceiptContentToPDF(doc);
-      };
-
-      logoImg.onerror = function () {
-        console.error('Failed to load logo, generating PDF without it');
-        // Generate PDF without logo
-        addReceiptContentToPDF(doc);
-      };
-
-      logoImg.src = 'https://ik.imagekit.io/y1q1jlceh/CARCINOVA_LOGO.jpg?tr=w-200';
-    }
-
-    // NEW: Helper function to add receipt content to PDF
-    function addReceiptContentToPDF(doc) {
-
-      const pageHeight = 500;
-      const contentHeight = pageHeight * 0.85;
-      const topMargin = (pageHeight - contentHeight) / 2 + 15;
-
-      // Get form data
-      const data = {
-        receiptNo: document.getElementById('receipt-no').value,
-        date: document.getElementById('date').value,
-        name: document.getElementById('name').value,
-        address: document.getElementById('address').value + ', ' + document.getElementById('city').value + ', ' + document.getElementById('state').value,
-        pan: document.getElementById('pan').value,
-        phone: document.getElementById('phone').value,
-        amount: '₹' + (document.querySelector('input[name="amount"]:checked').value === 'other' ? document.getElementById('other-amount').value : document.querySelector('input[name="amount"]:checked').value),
-        mode: "UPI",
-        words: document.getElementById('amount-in-words').value
-      };
-
-      // Set font
-      doc.setFont('helvetica');
-
-      // Header text (below logo)
-      doc.setFontSize(16);
-      doc.setTextColor(44, 62, 80);
-      doc.text('CarciNova Cancer Awareness & Care Foundation', 105, 38 + topMargin, { align: 'center' });
-
-      doc.setFontSize(11);
-      doc.setTextColor(127, 140, 141);
-      doc.text('Visakhapatnam, Andhra Pradesh, India', 105, 44 + topMargin, { align: 'center' });
-
-      // Line
-      doc.setDrawColor(44, 62, 80);
-      doc.setLineWidth(0.5);
-      doc.line(20, 48 + topMargin, 240, 48 + topMargin);
-
-      // Title
-      doc.setFontSize(18);
-      doc.setTextColor(44, 62, 80);
-      doc.text('DONATION RECEIPT', 105, 58 + topMargin, { align: 'center' });
-
-      // Receipt Details
-      doc.setFontSize(11);
-      doc.setTextColor(0, 0, 0);
-
-      let yPosition = topMargin + 70;
-
-      // Receipt No and Date
-      doc.setFont(undefined, 'bold');
-      doc.text('Receipt No:', 20, yPosition);
-      doc.setFont(undefined, 'normal');
-      doc.text(data.receiptNo, 55, yPosition);
-      doc.setFont(undefined, 'bold');
-      doc.text('Date:', 120, yPosition);
-      doc.setFont(undefined, 'normal');
-      doc.text(new Date(data.date).toLocaleDateString('en-IN'), 140, yPosition);
-
-      yPosition += 8;
-
-      // Name
-      doc.setFont(undefined, 'bold');
-      doc.text('Name:', 20, yPosition);
-      doc.setFont(undefined, 'normal');
-      doc.text(data.name, 55, yPosition, { maxWidth: 130 });
-      yPosition += 8;
-
-      // Address
-      doc.setFont(undefined, 'bold');
-      doc.text('Address:', 20, yPosition);
-      doc.setFont(undefined, 'normal');
-      const addressLines = doc.splitTextToSize(data.address, 180);
-      doc.text(addressLines, 55, yPosition);
-      yPosition += addressLines.length * 5 + 3;
-
-      // PAN and Phone
-      doc.setFont(undefined, 'bold');
-      doc.text('PAN:', 20, yPosition);
-      doc.setFont(undefined, 'normal');
-      doc.text(data.pan, 55, yPosition);
-      doc.setFont(undefined, 'bold');
-      doc.text('Phone:', 120, yPosition);
-      doc.setFont(undefined, 'normal');
-      doc.text(data.phone, 140, yPosition);
-
-      yPosition += 8;
-
-      // Amount and Mode
-      doc.setFont(undefined, 'bold');
-      doc.text('Amount:', 20, yPosition);
-      doc.setFont(undefined, 'normal');
-      doc.text(data.amount, 55, yPosition);
-      doc.setFont(undefined, 'bold');
-      doc.text('Mode:', 120, yPosition);
-      doc.setFont(undefined, 'normal');
-      doc.text(data.mode, 140, yPosition);
-
-      yPosition += 8;
-
-      // Amount in Words
-      doc.setFont(undefined, 'bold');
-      doc.text('Amount in Words:', 20, yPosition);
-      doc.setFont(undefined, 'normal');
-      const wordsLines = doc.splitTextToSize(data.words, 180);
-      doc.text(wordsLines, 55, yPosition);
-      yPosition += wordsLines.length * 5 + 10;
-
-      // Tax Information Box
-      doc.setDrawColor(200, 200, 200);
-      doc.setFillColor(248, 249, 250);
-      doc.roundedRect(15, yPosition, 230, 25, 2, 2, 'FD');
-
-      doc.setFontSize(10);
-      doc.setFont(undefined, 'bold');
-      doc.text('Tax Exemption Information:', 20, yPosition + 5);
-      yPosition += 10;
-
-      doc.setFont(undefined, 'normal');
-      doc.setFontSize(9);
-      const taxLines = doc.splitTextToSize('Eligible for deduction under section: Section 80G of the Income Tax Act, 1961.', 210);
-      doc.text(taxLines, 20, yPosition);
-      yPosition += taxLines.length * 4 + 2;
-
-      const regLines = doc.splitTextToSize('Our Income Tax Unique Registration No: u/s 80G(5) & date: AAB TB 7845JE20231, 1-Apr-23', 170);
-      doc.text(regLines, 20, yPosition);
-      yPosition += 20;
-
-      // Terms & Conditions Box
-      doc.setDrawColor(200, 200, 200);
-      doc.setFillColor(248, 249, 250);
-      doc.roundedRect(15, yPosition, 230, 22, 2, 2, 'FD');
-
-      doc.setFontSize(10);
-      doc.setFont(undefined, 'bold');
-      doc.text('Terms & Conditions:', 20, yPosition + 5);
-      yPosition += 10;
-
-      doc.setFont(undefined, 'normal');
-      doc.setFontSize(9);
-      const termsLines = doc.splitTextToSize('Cheque or DD is subject to realisation. This Receipt is exempt from levy of Stamp Duty vide Exemption (b) of Article 53 in Schedule 1 of The Indian Stamp Act, 1899.', 210);
-      doc.text(termsLines, 20, yPosition);
-      yPosition += termsLines.length * 4 + 20;
-
-      // Signatures
-      doc.setFontSize(9);
-      doc.setFont(undefined, 'normal');
-
-      // Donor Signature
-      doc.line(30, yPosition, 75, yPosition);
-      doc.text('Donor\'s Signature', 52, yPosition + 5, { align: 'center' });
-
-      // Authorized Signature
-      doc.line(125, yPosition, 170, yPosition);
-      doc.text('Authorized Signatory', 147, yPosition + 5, { align: 'center' });
-      doc.setFontSize(8);
-      doc.text('CarciNova Foundation', 147, yPosition + 10, { align: 'center' });
-
-      // Save the PDF
-      doc.save('CarciNova_Donation_Receipt_' + data.receiptNo + '.pdf');
-    }
-
-    // UPDATED: Also update the fallback generatePDFDirectly function to call the new one
-    function generatePDFDirectly(data) {
-      generatePDFDirectlyWithLogo();
-    }
-
-    // Listen to other amount input
-    document.getElementById('other-amount')?.addEventListener('input', () => {
-      updateOtherValue();
-      checkForm();
-    });
-
-    // Set current date as default
-    document.getElementById('date').valueAsDate = new Date();
-
-    // Generate receipt number on page load
-    document.getElementById('receipt-no').value = generateReceiptNumber();
-
-    // Initialize
-    window.onload = () => {
-      checkForm();
-    };
-
-
-    // Clear Form Button - clears all fields and resets everything
+    // Clear Form
     document.getElementById('clearFormBtn').addEventListener('click', function () {
       document.getElementById('donationForm').reset();
-
-      // Reset amount selection buttons
-      document.querySelectorAll('.amount-option').forEach(opt => {
-        opt.classList.remove('bg-primary', 'text-white');
-      });
-
-      // Hide other amount field
-      document.getElementById('other-amount-container').classList.add('d-none');
-
-      // Clear amount in words
-      document.getElementById('amount-in-words').value = '';
-
-      // Regenerate receipt number
-      document.getElementById('receipt-no').value = generateReceiptNumber();
-
-      // Set today’s date again
-      document.getElementById('date').valueAsDate = new Date();
-
-      // Disable donate button again
-      document.getElementById('donateBtn').disabled = true;
-
-      // Uncheck terms
-      document.getElementById('terms').checked = false;
+      donateBtn.disabled = true;
+      termsCheckbox.checked = false;
     });
 
-    // Automatically clear form after PDF is generated
-    document.getElementById('generateReceiptBtn').addEventListener('click', function () {
-      // Existing code runs first (generates PDF)...
-      // Then after 1 second, auto-clear the form
-      setTimeout(() => {
-        document.getElementById('clearFormBtn').click();
-      }, 1000);
+    // Form Submission
+    document.getElementById('donationForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = `
+        name: ${document.getElementById('name').value},
+        email: ${document.getElementById('email').value},
+        phone: ${document.getElementById('phone').value},
+        pan: ${document.getElementById('pan').value},
+        amount: ₹ ${document.getElementById('amount').value},
+        date: ${document.getElementById('date').value},
+        paymentMode: ${document.getElementById('payment-mode').value},
+        receiptId: ${document.getElementById('receipt-no').value},        
+        state: ${document.getElementById('state').value},
+        city: ${document.getElementById('city').value},
+        address: ${document.getElementById('address').value}
+      `;
+
+      const SERVICE_ID = "service_v0bxoge";
+      const TEMPLATE_ID = "template_bnxo38q";
+
+      const templateParams = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        subject: "80G Certificate Request from " + document.getElementById('name').value,
+        message: formData,
+      };
+
+      emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+        .then((response) => {
+          console.log('SUCCESS!', response.status, response.text);
+          document.getElementById('donationForm').reset();
+          donateBtn.disabled = true;
+          termsCheckbox.checked = false;
+          const successModalElement = document.getElementById('successModal');
+
+          if (successModalElement) {
+            const successModal = new bootstrap.Modal(successModalElement);
+            successModal.show();
+            setTimeout(() => {
+              successModal.hide();
+            }, 3000);
+          } else {
+            alert('Thank you! Your request has been submitted successfully.');
+          }
+        })
+        .catch((error) => {
+          console.error('FAILED...', error);
+        })
+        .finally(() => {
+          document.getElementById('donationForm').reset();
+          donateBtn.disabled = true;
+          termsCheckbox.checked = false;
+        });
     });
 
-
+    // Modal Functions
     function openModel() {
-      const donationModal = new bootstrap.Modal(document.getElementById('donationModal'));
-      donationModal.show();
+      const modal = new bootstrap.Modal(document.getElementById('donationModal'));
+      modal.show();
     }
 
-    function closeModel() {
-      const donationModal = bootstrap.Modal.getInstance(document.getElementById('donationModal'));
-      donationModal.hide();
+    function openQRModel() {
+      const modal = new bootstrap.Modal(document.getElementById('qrModal'));
+      modal.show();
     }
+
+    // Initialize Tooltips
+    document.addEventListener('DOMContentLoaded', function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    });
   </script>
 </body>
 
