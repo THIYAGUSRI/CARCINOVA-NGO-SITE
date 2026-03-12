@@ -520,41 +520,46 @@
             <div class="member">
               <div class="pic"><img src="assets/img/team/Jayachandra.webp" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Dr Jayachandra Reddy</h4>
-                <span>Director Carcinova Global</span>
-                <!-- <div class="social">
+                <div style="display: flex;">
+                  <div>
+                    <h4>Dr Jayachandra Reddy</h4>
+                    <span>Director Carcinova Global</span>
+                  </div>
+                  <!-- <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
                   <a href=""><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-linkedin"></i></a>
                 </div> -->
+                  <button
+                    style="color: var(--accent-color); background: none; border: none; cursor: pointer; margin-left: 4.2rem;" onclick="showProfile('jayachandra')">View
+                    Profile</button>
+                </div>
               </div>
             </div>
-            <p style="width: 377px; padding: 0.5rem; margin-left: 1.2rem; text-align: justify; box-shadow: 0 0 10px rgba(0,0,0,0.1); background-color: white;">As an Onco surgeon, I founded Carcinova Global to bridge the gap between cancer care and cancer
-              awareness, ensuring people receive timely knowledge, screening, and support.
-              Our mission is to promote prevention, early detection, and compassionate guidance so that no one faces
-              cancer uninformed or alone.
-              </p>
           </div><!-- End Team Member -->
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
               <div class="pic"><img src="assets/img/team/mrudula.webp" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>DR Mrudula</h4>
-                <span>Director Carcinova Global<br></span>
-                <!-- <div class="social">
+                <div style="display: flex;">
+                  <div>
+                    <h4>DR Mrudula</h4>
+                    <span>Director Carcinova Global<br></span>
+                  </div>
+                  <!-- <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
                   <a href=""><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-linkedin"></i></a>
                 </div> -->
+                  <button
+                    style="color: var(--accent-color); background: none; border: none; cursor: pointer; margin-left: 6.2rem;" onclick="showProfile('mrudula')">View
+                    Profile</button>
+                </div>
               </div>
             </div>
-            <p style="width: 377px; padding: 0.5rem; margin-left: 1.2rem; text-align: justify; box-shadow: 0 0 10px rgba(0,0,0,0.1); background-color: white;">Our mission is to bring hope and support to individuals and families affected by cancer through
-              prevention, early detection, and quality care.
-              We believe cancer care goes beyond treatment and includes awareness, emotional support, and
-              coordinated assistance. This foundation is more than an organisation that way.</p>
           </div><!-- End Team Member -->
 
         </div>
@@ -562,7 +567,38 @@
       </div>
 
     </section><!-- /Agents Section -->
+<div class="modal fade" id="teamProfileModal" tabindex="-1" aria-labelledby="teamProfileModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" 
+       style="max-width: 900px; margin: 1rem auto;">
+    <div class="modal-content" 
+         style="border-radius: 16px; overflow: hidden; border: none; box-shadow: 0 10px 40px rgba(0,0,0,0.25);">
+      
+      <!-- Header -->
+      <div class="modal-header" 
+           style="background-color: var(--accent-color); color: white; border-bottom: none; padding: 1.5rem 2rem;">
+        <h5 class="modal-title" id="modalFullName" 
+            style="font-size: 1.6rem; font-weight: 700; margin: 0;"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                style="filter: brightness(0) invert(1);"></button>
+      </div>
 
+      <!-- Body -->
+      <div class="modal-body" id="modalContent"
+           style="padding: 2.5rem; background: #fff; max-height: 70vh; overflow-y: auto; font-size: 1.05rem; line-height: 1.8; color: #333;">
+        <!-- Content will be injected here via JS -->
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer" 
+           style="border-top: none; padding: 1.25rem 2rem; background: #f8f9fa; justify-content: center;">
+        <button type="button" class="btn" data-bs-dismiss="modal"
+                style="background: var(--accent-color); color: white; padding: 0.75rem 2.5rem; border-radius: 50px; font-weight: 600; border: none; font-size: 1.1rem;">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
     <!-- quote Section -->
     <section id="quote" class="quote section">
       <h2>“Taking cancer awareness from door to door, and hope from heart to heart.”</h2>
@@ -704,7 +740,6 @@
       </div>
 
     </section>/Testimonials Section -->
-
   </main>
 
   <!-- <footer id="footer" class="footer light-background">
@@ -815,6 +850,80 @@
 
   </footer>
 
+      <!-- <div id="mrudula" hidden>
+      <img src="assets/img/team/mrudula.webp" alt="" srcset="">
+      <div>
+        <h2>DR Mrudula Director Carcinova Global</h2>
+        <p>
+          Was established with a mission to bring hope and support to individuals and families affected with Cancer by
+          improved access to prevention, early detection & quality care.
+          As healthcare professionals we recognise that effective Cancer care extends beyond medical intervention alone
+          and requires timely awareness, early detection coordinated support and continuity of care.
+        </p>
+        <p>
+          Guided by principles of integrity, compassion, and accountability, we operate in partnership with medical
+          experts, volunteers, corporate and institutional stakeholders and strive to create a sustainable impact.
+          Our foundation is built on the belief that care extends beyond medicine. While treatment is critical, so too
+          is
+          emotional support, knowledge, and reassurance, and the belief that someone truly cares.
+        </p>
+        <p>
+          Through awareness program, early detection initiatives, patient assistance, and outreach, we strive to ease
+          the
+          burden that cancer places on the community and families.
+        </p>
+        <p>
+          Every story we encounter reinforces our purpose-the parent fighting to stay strong for their children, the
+          young
+          facing an uncertain future, the family struggling to hold on to hope-these stories remind us of the reason
+          that
+          we do this work. They remind as that compassion can be as powerful as any treatment. This foundation is more
+          than an organisation that way.
+        </p>
+      </div>
+    </div> -->
+    <!-- <div id="jayachandra" hidden>
+      <img src="assets/img/team/Jayachandra.webp" alt="" srcset="">
+      <div>
+        <h2>Dr Jayachandra Reddy Director Carcinova Global</h2>
+        <p>
+          As an Onco surgeon, I have spent years standing at the most fragile intersections of human life—where fear
+          meets hope, and uncertainty meets courage. Every diagnosis is more than a medical condition; it is a moment
+          that changes families, futures, and faith in tomorrow. Carcinova Global was born from this lived reality.
+        </p>
+        <p>
+          Beyond the operating room, I repeatedly witnessed a painful truth; while medical science continues to advance,
+          access, awareness, and timely care remain deeply unequal. Too many patients reach us late—not because cancer
+          was unbeatable, but because knowledge, support, or opportunity arrived too late.
+        </p>
+        <p>
+          At Carcinova Global, our mission is simple yet urgent; to bridge the gap between cancer care and cancer
+          consciousness. We believe that saving lives begins long before treatment—through education, early detection,
+          prevention, and compassionate guidance.
+        </p>
+        <p>
+          As both an Onco surgeon and Managing Director, I see Carcinova Global as an extension of my oath—not confined
+          to hospital walls, but reaching communities, workplaces, and homes. We work toward empowering individuals with
+          credible information, supporting early screening initiatives, fostering global collaborations, and advocating
+          for equitable cancer care.
+        </p>
+        <p>
+          Cancer does not discriminate—but care often does. Changing this reality requires not only technology, but
+          intent. Not only expertise, but empathy.
+        </p>
+        <p>
+          Carcinova Global stands for a future where no one faces cancer alone, uninformed, or unheard. A future where
+          awareness saves lives, and hope is not a privilege but a promise.
+        <p>This is not just an organization.</p>
+        <p>It is a responsibility I carry—as a doctor, as a leader, and as a human being.</p>
+        <p>Together, we can transform fear into action, and diagnosis into direction.</p>
+        </p>
+        <p>Carcinova Global reflects both my professional responsibility and my personal conviction that cancer outcomes
+          can change when knowledge reaches people in time, and when systems are designed with compassion as well as
+          competence.</p>
+      </div>
+    </div> -->
+
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
@@ -832,6 +941,56 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+  function showProfile(person) {
+    const modal = document.getElementById('teamProfileModal');
+    const nameEl = document.getElementById('modalFullName');
+    const contentEl = document.getElementById('modalContent');
+
+    let title = '';
+    let html = '';
+
+    if (person === 'jayachandra') {
+      title = 'Dr Jayachandra Reddy<br><small style="font-size:0.9rem; opacity:0.9;">Director Carcinova Global</small>';
+      html = `
+        <div style="text-align:center; margin-bottom:2rem;">
+          <img src="assets/img/team/Jayachandra.webp" alt="Dr Jayachandra Reddy"
+               style="width:275px; height:275px; object-fit:fill; border-radius:50%; border:4px solid #e9ecef; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+        </div>
+        <p style="margin-bottom:1.4rem;">As an Onco surgeon, I have spent years standing at the most fragile intersections of human life—where fear meets hope, and uncertainty meets courage. Every diagnosis is more than a medical condition; it is a moment that changes families, futures, and faith in tomorrow. Carcinova Global was born from this lived reality.</p>
+        <p style="margin-bottom:1.4rem;">Beyond the operating room, I repeatedly witnessed a painful truth; while medical science continues to advance, access, awareness, and timely care remain deeply unequal. Too many patients reach us late—not because cancer was unbeatable, but because knowledge, support, or opportunity arrived too late.</p>
+        <p style="margin-bottom:1.4rem;">At Carcinova Global, our mission is simple yet urgent; to bridge the gap between cancer care and cancer consciousness. We believe that saving lives begins long before treatment—through education, early detection, prevention, and compassionate guidance.</p>
+        <p style="margin-bottom:1.4rem;">As both an Onco surgeon and Managing Director, I see Carcinova Global as an extension of my oath—not confined to hospital walls, but reaching communities, workplaces, and homes. We work toward empowering individuals with credible information, supporting early screening initiatives, fostering global collaborations, and advocating for equitable cancer care.</p>
+        <p style="margin-bottom:1.4rem;">Cancer does not discriminate—but care often does. Changing this reality requires not only technology, but intent. Not only expertise, but empathy.</p>
+        <p style="margin-bottom:1.4rem;">Carcinova Global stands for a future where no one faces cancer alone, uninformed, or unheard. A future where awareness saves lives, and hope is not a privilege but a promise.</p>
+        <p style="font-weight:600; margin-bottom:1rem;">This is not just an organization.</p>
+        <p style="font-weight:600; margin-bottom:1rem;">It is a responsibility I carry—as a doctor, as a leader, and as a human being.</p>
+        <p style="margin-bottom:1rem;">Together, we can transform fear into action, and diagnosis into direction.</p>
+        <p>Carcinova Global reflects both my professional responsibility and my personal conviction that cancer outcomes can change when knowledge reaches people in time, and when systems are designed with compassion as well as competence.</p>
+      `;
+    } 
+    else if (person === 'mrudula') {
+      title = 'DR Mrudula<br><small style="font-size:0.9rem; opacity:0.9;">Director Carcinova Global</small>';
+      html = `
+        <div style="text-align:center; margin-bottom:2rem;">
+          <img src="assets/img/team/mrudula.webp" alt="DR Mrudula"
+               style="width:275px; height:275px; object-fit:fill; border-radius:50%; border:4px solid #e9ecef; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+        </div>
+        <p style="margin-bottom:1.4rem;">Was established with a mission to bring hope and support to individuals and families affected with Cancer by improved access to prevention, early detection & quality care. As healthcare professionals we recognise that effective Cancer care extends beyond medical intervention alone and requires timely awareness, early detection coordinated support and continuity of care.</p>
+        <p style="margin-bottom:1.4rem;">Guided by principles of integrity, compassion, and accountability, we operate in partnership with medical experts, volunteers, corporate and institutional stakeholders and strive to create a sustainable impact. Our foundation is built on the belief that care extends beyond medicine. While treatment is critical, so too is emotional support, knowledge, and reassurance, and the belief that someone truly cares.</p>
+        <p style="margin-bottom:1.4rem;">Through awareness program, early detection initiatives, patient assistance, and outreach, we strive to ease the burden that cancer places on the community and families.</p>
+        <p>Every story we encounter reinforces our purpose-the parent fighting to stay strong for their children, the young facing an uncertain future, the family struggling to hold on to hope-these stories remind us of the reason that we do this work. They remind as that compassion can be as powerful as any treatment. This foundation is more than an organisation that way.</p>
+      `;
+    }
+
+    nameEl.innerHTML = title;
+    contentEl.innerHTML = html;
+
+    // Show modal using Bootstrap 5 JS
+    const myModal = new bootstrap.Modal(document.getElementById('teamProfileModal'));
+    myModal.show();
+  }
+</script>
   <script>
     const ctx = document.getElementById('cancerPieChart').getContext('2d');
 
