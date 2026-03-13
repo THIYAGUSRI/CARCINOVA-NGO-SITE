@@ -87,13 +87,8 @@
             </ul>
           </li>
           <li><a href="contact.html">Reach Us</a></li>
-          <li class="dropdown"
-            style="border: 1px solid var(--accent-color); border-radius:15px; color:white; padding-right:10px;">
-            <a href="#"><span>Make a Donation</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="donate.html">Donation</a></li>
-              <li><a href="#">Download Receipt</a></li>
-            </ul>
+          <li style="border: 1px solid var(--accent-color); border-radius:15px; color:white; padding-right:10px;"><a
+              href="./donate.html"><span>Make a Donation</span></a>
           </li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -314,7 +309,7 @@
             <h4>Contact</h4>
             <p class="h6" style="font-size: 15px;">
               <strong>Phone:</strong> <span>+91 96184 59111</span><br>
-              <strong>Email:</strong> <span>carcinova.org@gmail.com</span><br>
+              <strong>Email:</strong> <span style="font-size: 12.5px;">carcinovaglobalfoundation@gmail.com</span><br>
             </p>
           </div>
         </div>
@@ -409,7 +404,7 @@ Role: ${document.getElementById("role").value}
 Message: ${document.getElementById("message").value}
     `.trim();
 
-    const sub = `${document.getElementById('role').value} Request Form`;
+      const sub = `${document.getElementById('role').value} Request Form`;
 
       const templateParams = {
         name: document.getElementById("name").value,

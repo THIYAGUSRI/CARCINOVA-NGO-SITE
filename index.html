@@ -85,13 +85,9 @@
             </ul>
           </li>
           <li><a href="./pages/contact.html">Reach Us</a></li>
-          <li class="dropdown"
+          <li
             style="border: 1px solid var(--accent-color); border-radius:15px; color:white; padding-right:10px;"><a
-              href="#"><span>Make a Donation</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="./pages/donate.html">Donation</a></li>
-              <li><a href="#">Download Receipt</a></li>
-            </ul>
+              href="./pages/donate.html"><span>Make a Donation</span></a>            
           </li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -273,7 +269,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Our Transparency & Reports</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <!-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> -->
       </div><!--End Section Title -->
 
       <div class="container">
@@ -337,9 +333,9 @@
 
       </div>
       <div class="container">
-        <div class="mt-5 col-lg-12 d-lg-flex flex-lg-row flex-md-column gap-2" data-aos="fade-up" data-aos-delay="200">
-          <!-- Start Table -->
-          <div class="col-lg-7 table-responsive" style="max-height: 360px; overflow-y: auto;">
+        <div class="mt-5" data-aos="fade-up" data-aos-delay="200">
+          <!-- <div class="mt-5 col-lg-12 d-lg-flex flex-lg-row flex-md-column gap-2" data-aos="fade-up" data-aos-delay="200"> -->
+          <!-- <div class="col-lg-7 table-responsive" style="max-height: 360px; overflow-y: auto;">
             <table class="table table-bordered table-striped">
               <thead class="table-dark">
                 <tr>
@@ -490,14 +486,12 @@
                 </tr>
               </tbody>
             </table>
-          </div>
-          <!-- End Table -->
-          <!-- Start Graph -->
-          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="200">
+          </div> -->
+          <!-- <div class="col-lg-5" data-aos="fade-up" data-aos-delay="200"> -->
+          <div class="" data-aos="fade-up" data-aos-delay="200">
             <h5 class="text-center mb-3 mt-3">Cancer Patients Percentage</h5>
             <canvas id="cancerPieChart" style="max-height:300px;"></canvas>
           </div>
-          <!-- End Graph -->
         </div>
       </div>
 
@@ -509,8 +503,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Our Members</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Our Founders</h2>
+        <!-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> -->
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -523,18 +517,20 @@
                 <div style="display: flex;">
                   <div>
                     <h4>Dr Jayachandra Reddy</h4>
-                    <span>Director Carcinova Global</span>
+                    <span>Managing Director Carcinova Global</span>
                   </div>
                   <!-- <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
                   <a href=""><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-linkedin"></i></a>
-                </div> -->
+                   </div> -->
                   <button
-                    style="color: var(--accent-color); background: none; border: none; cursor: pointer; margin-left: 4.2rem;" onclick="showProfile('jayachandra')">View
+                    style="color: var(--accent-color); background: none; border: none; cursor: pointer; margin-left: 2.2rem;"
+                    onclick="showProfile('jayachandra')">View
                     Profile</button>
                 </div>
+                <p></p>
               </div>
             </div>
           </div><!-- End Team Member -->
@@ -545,7 +541,7 @@
               <div class="member-info">
                 <div style="display: flex;">
                   <div>
-                    <h4>DR Mrudula</h4>
+                    <h4>Dr Mrudula Chelamkuri</h4>
                     <span>Director Carcinova Global<br></span>
                   </div>
                   <!-- <div class="social">
@@ -555,7 +551,8 @@
                   <a href=""><i class="bi bi-linkedin"></i></a>
                 </div> -->
                   <button
-                    style="color: var(--accent-color); background: none; border: none; cursor: pointer; margin-left: 6.2rem;" onclick="showProfile('mrudula')">View
+                    style="color: var(--accent-color); background: none; border: none; cursor: pointer; margin-left: 2.2rem;"
+                    onclick="showProfile('mrudula')">View
                     Profile</button>
                 </div>
               </div>
@@ -567,38 +564,37 @@
       </div>
 
     </section><!-- /Agents Section -->
-<div class="modal fade" id="teamProfileModal" tabindex="-1" aria-labelledby="teamProfileModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered" 
-       style="max-width: 900px; margin: 1rem auto;">
-    <div class="modal-content" 
-         style="border-radius: 16px; overflow: hidden; border: none; box-shadow: 0 10px 40px rgba(0,0,0,0.25);">
-      
-      <!-- Header -->
-      <div class="modal-header" 
-           style="background-color: var(--accent-color); color: white; border-bottom: none; padding: 1.5rem 2rem;">
-        <h5 class="modal-title" id="modalFullName" 
-            style="font-size: 1.6rem; font-weight: 700; margin: 0;"></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                style="filter: brightness(0) invert(1);"></button>
-      </div>
+    <div class="modal fade" id="teamProfileModal" tabindex="-1" aria-labelledby="teamProfileModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" style="max-width: 900px; margin: 1rem auto;">
+        <div class="modal-content"
+          style="border-radius: 16px; overflow: hidden; border: none; box-shadow: 0 10px 40px rgba(0,0,0,0.25);">
 
-      <!-- Body -->
-      <div class="modal-body" id="modalContent"
-           style="padding: 2.5rem; background: #fff; max-height: 70vh; overflow-y: auto; font-size: 1.05rem; line-height: 1.8; color: #333;">
-        <!-- Content will be injected here via JS -->
-      </div>
+          <!-- Header -->
+          <div class="modal-header"
+            style="background-color: var(--accent-color); color: white; border-bottom: none; padding: 1.5rem 2rem;">
+            <h5 class="modal-title" id="modalFullName" style="font-size: 1.6rem; font-weight: 700; margin: 0;"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+              style="filter: brightness(0) invert(1);"></button>
+          </div>
 
-      <!-- Footer -->
-      <div class="modal-footer" 
-           style="border-top: none; padding: 1.25rem 2rem; background: #f8f9fa; justify-content: center;">
-        <button type="button" class="btn" data-bs-dismiss="modal"
-                style="background: var(--accent-color); color: white; padding: 0.75rem 2.5rem; border-radius: 50px; font-weight: 600; border: none; font-size: 1.1rem;">
-          Close
-        </button>
+          <!-- Body -->
+          <div class="modal-body" id="modalContent"
+            style="padding: 2.5rem; background: #fff; max-height: 70vh; overflow-y: auto; font-size: 1.05rem; line-height: 1.8; color: #333;">
+            <!-- Content will be injected here via JS -->
+          </div>
+
+          <!-- Footer -->
+          <div class="modal-footer"
+            style="border-top: none; padding: 1.25rem 2rem; background: #f8f9fa; justify-content: center;">
+            <button type="button" class="btn" data-bs-dismiss="modal"
+              style="background: var(--accent-color); color: white; padding: 0.75rem 2.5rem; border-radius: 50px; font-weight: 600; border: none; font-size: 1.1rem;">
+              Close
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
     <!-- quote Section -->
     <section id="quote" class="quote section">
       <h2>“Taking cancer awareness from door to door, and hope from heart to heart.”</h2>
@@ -767,7 +763,7 @@
           <div class="d-flex align-items-center justify-content-center pt-3">
             <div class="d-flex flex-column align-items-center">
               <div><strong>Phone:</strong> <span>+91 96184 59111</span></div>
-              <div><strong>Web-Site:</strong> <span>carcinova.org@gmail.com</span></div>
+              <div><strong>Web-Site:</strong> <span style="font-size: 12.5px;">carcinovaglobalfoundation@gmail.com</span></div>
             </div>
           </div>
         </div>
@@ -811,7 +807,7 @@
             <h4>Contact</h4>
             <p class="h6" style="font-size: 15px;">
               <strong>Phone:</strong> <span>+91 96184 59111</span><br>
-              <strong>Email:</strong> <span>carcinova.org@gmail.com</span><br>
+              <strong>Email:</strong> <span style="font-size: 12.5px;">carcinovaglobalfoundation@gmail.com</span><br>
             </p>
           </div>
         </div>
@@ -850,7 +846,7 @@
 
   </footer>
 
-      <!-- <div id="mrudula" hidden>
+  <!-- <div id="mrudula" hidden>
       <img src="assets/img/team/mrudula.webp" alt="" srcset="">
       <div>
         <h2>DR Mrudula Director Carcinova Global</h2>
@@ -882,7 +878,7 @@
         </p>
       </div>
     </div> -->
-    <!-- <div id="jayachandra" hidden>
+  <!-- <div id="jayachandra" hidden>
       <img src="assets/img/team/Jayachandra.webp" alt="" srcset="">
       <div>
         <h2>Dr Jayachandra Reddy Director Carcinova Global</h2>
@@ -942,17 +938,17 @@
   <script src="assets/js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-  function showProfile(person) {
-    const modal = document.getElementById('teamProfileModal');
-    const nameEl = document.getElementById('modalFullName');
-    const contentEl = document.getElementById('modalContent');
+    function showProfile(person) {
+      const modal = document.getElementById('teamProfileModal');
+      const nameEl = document.getElementById('modalFullName');
+      const contentEl = document.getElementById('modalContent');
 
-    let title = '';
-    let html = '';
+      let title = '';
+      let html = '';
 
-    if (person === 'jayachandra') {
-      title = 'Dr Jayachandra Reddy<br><small style="font-size:0.9rem; opacity:0.9;">Director Carcinova Global</small>';
-      html = `
+      if (person === 'jayachandra') {
+        title = 'Dr Jayachandra Reddy<br><small style="font-size:0.9rem; opacity:0.9;">Director Carcinova Global</small>';
+        html = `
         <div style="text-align:center; margin-bottom:2rem;">
           <img src="assets/img/team/Jayachandra.webp" alt="Dr Jayachandra Reddy"
                style="width:275px; height:275px; object-fit:fill; border-radius:50%; border:4px solid #e9ecef; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
@@ -968,10 +964,10 @@
         <p style="margin-bottom:1rem;">Together, we can transform fear into action, and diagnosis into direction.</p>
         <p>Carcinova Global reflects both my professional responsibility and my personal conviction that cancer outcomes can change when knowledge reaches people in time, and when systems are designed with compassion as well as competence.</p>
       `;
-    } 
-    else if (person === 'mrudula') {
-      title = 'DR Mrudula<br><small style="font-size:0.9rem; opacity:0.9;">Director Carcinova Global</small>';
-      html = `
+      }
+      else if (person === 'mrudula') {
+        title = 'DR Mrudula<br><small style="font-size:0.9rem; opacity:0.9;">Director Carcinova Global</small>';
+        html = `
         <div style="text-align:center; margin-bottom:2rem;">
           <img src="assets/img/team/mrudula.webp" alt="DR Mrudula"
                style="width:275px; height:275px; object-fit:fill; border-radius:50%; border:4px solid #e9ecef; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
@@ -981,26 +977,26 @@
         <p style="margin-bottom:1.4rem;">Through awareness program, early detection initiatives, patient assistance, and outreach, we strive to ease the burden that cancer places on the community and families.</p>
         <p>Every story we encounter reinforces our purpose-the parent fighting to stay strong for their children, the young facing an uncertain future, the family struggling to hold on to hope-these stories remind us of the reason that we do this work. They remind as that compassion can be as powerful as any treatment. This foundation is more than an organisation that way.</p>
       `;
+      }
+
+      nameEl.innerHTML = title;
+      contentEl.innerHTML = html;
+
+      // Show modal using Bootstrap 5 JS
+      const myModal = new bootstrap.Modal(document.getElementById('teamProfileModal'));
+      myModal.show();
     }
-
-    nameEl.innerHTML = title;
-    contentEl.innerHTML = html;
-
-    // Show modal using Bootstrap 5 JS
-    const myModal = new bootstrap.Modal(document.getElementById('teamProfileModal'));
-    myModal.show();
-  }
-</script>
+  </script>
   <script>
     const ctx = document.getElementById('cancerPieChart').getContext('2d');
 
     new Chart(ctx, {
       type: 'pie',
       data: {
-        labels: ['Lung Cancer', 'Breast Cancer', 'Blood Cancer', 'Brain Cancer', 'Others'],
+        labels: ['oral cavity cancer', 'Breast Cancer', 'Cervical cancer', 'Lung cancer', 'Colorectal cancer'],
         datasets: [{
           label: 'Patients %',
-          data: [30, 25, 20, 15, 10],
+          data: [30, 30, 20, 10, 10],
           borderWidth: 1
         }]
       },
